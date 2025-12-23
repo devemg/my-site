@@ -1,0 +1,82 @@
+{
+  "landing": {
+    "name": "Emely García",
+    "role": "Frontend Developer",
+    "phrase": "Designing, developing, and maintaining scalable, high-performance web applications."
+  },
+  "experience": {
+    "title": "My Experience",
+    "description": "Hey, I'm a Front-End Developer with almost 5 years of experience.\nI love building fast, scalable web apps that look and feel great.\nI'm comfortable working with React, Angular, and modern web tools.\nI've worked with Agile teams from different parts of the world, such as India, the United States, and Canada.\nClean code, testing, and performance are super important to me.",
+    "items": [
+      {
+        "id": 1,
+        "interval": "Ideas4Software: 2020-2021",
+        "description": "As a designer and web developer, Led the design and development of a POS system for small and medium businesses.\nBuilt key features for a hybrid mobile app and helped connect it across platforms."
+      },
+      {
+        "id": 2,
+        "interval": "YaVoy: Feb 2021 - Jun 2021",
+        "description": "As an Angular developer, I worked to create dynamic, business-focused UI layouts with top-notch usability and responsive design.\nBuilt clean, reusable code with a strong focus on quality and scalability.\nDelivered updates constantly, following continuous delivery best practices."
+      },
+      {
+        "id": 3,
+        "interval": "Wotdev: 2021 - Feb 2025",
+        "description": "As a Senior Frontend Developer I had the chance to work at WOTDev and Quickplay, leading and developing projects for OTT platforms.\nI focused on making streaming experiences smooth and fast for web and SmartTV apps.\nDesigned clean, high-performing interfaces using HTML, CSS, JavaScript, TypeScript, Angular and React.\nBuilt and maintained SDKs to help different clients easily connect to the platforms.\nWorked hands-on with Agile teams to drive projects forward and deliver great results."
+      },
+      {
+        "id": 4,
+        "interval": "Elaniin: Jul 2025 - Present",
+        "description": "I currently work as a React Developer at Elaniin, contributing to a large-scale government project alongside a team of more than 10 collaborators, delivering a robust and scalable web solution.\n\nMy role focuses on building high-performance, maintainable user interfaces using React, TypeScript, and modern frontend technologies, translating business requirements and design specifications into efficient, reusable components. I actively work on performance optimization, API integration, and ensuring a smooth, responsive user experience. I collaborate closely with designers, product managers, and engineers in an Agile environment, participating in code reviews, continuous improvements, and the adoption of best practices."
+      }
+    ]
+  },
+  "skills": {
+    "title": "My Skills",
+    "categories": [
+      {
+        "id": 1,
+        "title": "Programming Languages"
+      },
+      {
+        "id": 2,
+        "title": "Frameworks & Libraries"
+      },
+      {
+        "id": 3,
+        "title": "Databases"
+      },
+      {
+        "id": 4,
+        "title": "Tools & IDEs"
+      },
+      {
+        "id": 5,
+        "title": "Project Management & Collaboration"
+      },
+      {
+        "id": 6,
+        "title": "Cloud & DevOps"
+      }
+    ]
+  },
+  "quote": {
+    "author": "Steve Jobs",
+    "text": "The only way to do great work is to love what you do."
+  },
+  "projects": {
+    "title": "My Projects",
+    "sourceCode": "Source Code",
+    "liveDemo": "Live Demo",
+    "takeLook": "Take a look!"
+  },
+  "contact": {
+    "title": "Interested in collaborating with me?",
+    "subtitle1": "I am always open to discuss projects or collaboration opportunities.",
+    "subtitle2": "You can contact me through my social networks.",
+    "message": "I will be happy to answer!",
+    "copyright": "devemg 2025 (v3.0.0)"
+  },
+  "language": {
+    "switch": "Switch language"
+  }
+}

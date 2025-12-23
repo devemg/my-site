@@ -3,26 +3,32 @@ import { SkillItem } from "@models/skill-category-item"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 
 interface SkillsSectionProps {
   items: SkillItem[];
 }
 export const SkillsSection: React.FC<SkillsSectionProps> = ({ items  }) => {
+  const { t } = useTranslation();
 
   useEffect(() => {
-    gsap.fromTo('.skillset', { x: -100, opacity: 0, }, { x:0, opacity: 1, duration: 1, stagger: 1, scrollTrigger: {
+    const skillsAnimation = gsap.fromTo('.skillset', { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.2, scrollTrigger: {
       trigger: '#skills',
-      scrub:1
+      start: 'top 80%',
+      end: 'bottom 20%',
+      scrub: 1,
+      toggleActions: 'play reverse play reverse'
     }});
     return () => {
+      skillsAnimation.kill();
       ScrollTrigger.getAll().forEach(st => st.kill());
   };
-  }, []);
+  }, [items]);
   
 
   return (
     <div className="w-full h-full bg-background p-10 md:p-20">
-        <h2 className="text-3xl mb-10">My Skills</h2>
+        <h2 className="text-3xl mb-10">{t('skills.title')}</h2>
         <div id="skills" className="flex gap-2 flex-col pb-10">
         {
           items.map(skillSet=><div key={skillSet.id} className="skillset grow-0 shrink-0 mb-10">

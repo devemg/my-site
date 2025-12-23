@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger, TextPlugin } from 'gsap/all';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import { ProjectPage } from './Project.tsx';
+import './i18n/config';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);

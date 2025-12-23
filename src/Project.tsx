@@ -1,4 +1,4 @@
-import { devemgProjects } from "@data/projects.data";
+import { getDevemgProjects } from "@data/projects.data";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ProjectItem } from "@models/project-item";
@@ -7,18 +7,21 @@ import { faChevronLeft } from "./assets/icons/faIcons/faChevronLeft";
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router"
 import 'photoswipe/dist/photoswipe.css'
+import { useTranslation } from 'react-i18next';
 
 import { Gallery, Item } from 'react-photoswipe-gallery'
 
 export const ProjectPage = () => {
     const params = useParams();
     const navigate = useNavigate();
+    const { t, i18n } = useTranslation();
     const [selected, setSelected] = useState<ProjectItem>();
 
     useEffect(() => {
-        const element = devemgProjects.find(el => el.id === params['id']);
+        const projects = getDevemgProjects();
+        const element = projects.find(el => el.id === params['id']);
         setSelected(element);
-    }, [params['id']]);
+    }, [params['id'], i18n.language]);
 
     const goBack = () => {
         navigate(-1);
@@ -35,10 +38,10 @@ export const ProjectPage = () => {
                     {
                         selected.description.split('\n').map((line, index) => <p key={'p-' + index} className="mb-3">{line}</p>)
                     }
-                    {selected.codeUrl && <a href={selected.codeUrl} target="_blank" className="flex items-center w-fit gap-2 mb-3"><FontAwesomeIcon icon={faGithub} size="2x" /> Source Code</a>}
-                    {selected.demoUrl && <a href={selected.demoUrl} target="_blank" className="flex items-center w-fit gap-2 mb-3"><FontAwesomeIcon icon={faLive} size="2x" /> Live Demo</a>}
+                    {selected.codeUrl && <a href={selected.codeUrl} target="_blank" className="flex items-center w-fit gap-2 mb-3"><FontAwesomeIcon icon={faGithub} size="2x" /> {t('projects.sourceCode')}</a>}
+                    {selected.demoUrl && <a href={selected.demoUrl} target="_blank" className="flex items-center w-fit gap-2 mb-3"><FontAwesomeIcon icon={faLive} size="2x" /> {t('projects.liveDemo')}</a>}
                     {selected.images && selected.images.length > 0 && <>
-                        <h2 className="text-2xl my-2">Take a look!</h2>
+                        <h2 className="text-2xl my-2">{t('projects.takeLook')}</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 cursor-pointer">
                             <Gallery>
                                 {

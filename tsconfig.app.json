@@ -27,6 +27,7 @@
       "@hooks/*": ["./hooks/*"],
       "@data/*": ["./data/*"],
       "@models/*": ["./models/*"],
+      "@components/*": ["./components/*"],
     }
   },
   "include": ["src"]

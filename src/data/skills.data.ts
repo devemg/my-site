@@ -18,11 +18,15 @@ import { faDatagrip } from "../assets/icons/faIcons/faDatagrip";
 import { faEclipse } from "../assets/icons/faIcons/faEclipse";
 import { faFirebase } from "../assets/icons/faIcons/faFirebase";
 import { faGSAP } from "../assets/icons/faIcons/faGSAP";
+import i18n from "../i18n/config";
 
-export const devemgSkills: SkillItem[] = [
+const getSkillsData = () => {
+  const categories = i18n.t('skills.categories', { returnObjects: true }) as Array<{ id: number; title: string }>;
+  
+  return [
     {
       id: 1,
-      title: "Programming Languages",
+      title: categories[0]?.title || "Programming Languages",
       tools: [
         {
           id: 1,
@@ -58,7 +62,7 @@ export const devemgSkills: SkillItem[] = [
     },
     {
       id: 2,
-      title: "Frameworks and Libraries",
+      title: categories[1]?.title || "Frameworks and Libraries",
       tools: [{
         id: 1,
         title: "Angular",
@@ -113,7 +117,7 @@ export const devemgSkills: SkillItem[] = [
     },
     {
       id: 3,
-      title: "Cloud",
+      title: categories[5]?.title || "Cloud",
       tools: [
         {
           id: 1,
@@ -144,7 +148,7 @@ export const devemgSkills: SkillItem[] = [
     },
     {
       id: 4,
-      title: "Databases",
+      title: categories[2]?.title || "Databases",
       tools: [
         {
           id: 1,
@@ -170,7 +174,7 @@ export const devemgSkills: SkillItem[] = [
     },
     {
       id: 5,
-      title: 'Project Management',
+      title: categories[4]?.title || 'Project Management',
       tools: [
         {
           id: 4,
@@ -233,7 +237,7 @@ export const devemgSkills: SkillItem[] = [
     },
     {
       id: 8,
-      title: "IDEs and tools",
+      title: categories[3]?.title || "IDEs and tools",
       tools: [
         {
           id: 1,
@@ -268,3 +272,9 @@ export const devemgSkills: SkillItem[] = [
       ]
     },
   ];
+};
+
+export const getDevemgSkills = (): SkillItem[] => getSkillsData();
+
+// Mantener compatibilidad con código existente
+export const devemgSkills: SkillItem[] = getDevemgSkills();

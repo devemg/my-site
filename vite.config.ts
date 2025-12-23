@@ -11,6 +11,7 @@ export default defineConfig({
       '@hooks': '/src/hooks',
       '@data': '/src/data',
       '@models': '/src/models',
+      '@components': '/src/components',
     },
   },
 })

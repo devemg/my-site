@@ -9,11 +9,15 @@ interface QuoteSectionProps {
 export const QuoteSection: React.FC<QuoteSectionProps> = ({ text, author }) => {
   
   useEffect(() => {
-    gsap.fromTo('.quote-item', { x: '100%' }, { x:0, duration: 1, scrollTrigger: {
+    const quoteAnimation = gsap.fromTo('.quote-item', { x: '100%' }, { x:0, duration: 1, scrollTrigger: {
       trigger: '#quote',
       scrub:1
     }});
-  }, [])
+    
+    return () => {
+      quoteAnimation.kill();
+    };
+  }, [text, author]);
 
   return (
     <div id="quote" className="w-full h-dvh bg-accent p-10 flex flex-col justify-center">

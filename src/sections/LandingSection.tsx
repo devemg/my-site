@@ -11,18 +11,29 @@ interface LandingSectionProps {
 export const LandingSection: React.FC<LandingSectionProps> = ({ name, role, phrase }) => {
 
   useEffect(() => {
+    // Limpiar el texto anterior
+    const textElement = document.querySelector('#text');
+    if (textElement) {
+      textElement.textContent = '';
+    }
+
     gsap.timeline()
     .fromTo('#name', {y: -100, opacity: 0, duration: 2 }, { y: 0, opacity: 1 } )
     .fromTo('#role', {y: -100, opacity: 0, duration: 2 }, { y: 0, opacity: 1 } );
-    gsap.to("#text", {text: {value: phrase }, duration: 5, delay: 1, ease: "none", yoyo: true, repeat: -1, scrollTrigger: {
+    
+    const textAnimation = gsap.to("#text", {text: {value: phrase }, duration: 5, delay: 1, ease: "none", yoyo: true, repeat: -1, scrollTrigger: {
       trigger: '#landing',
       toggleActions: 'play pause resume reset',
-    } })
+    } });
 
-      return () => {
-        ScrollTrigger.getAll().forEach(st => st.kill());
+    return () => {
+      textAnimation.kill();
+      ScrollTrigger.getAll().forEach(st => st.kill());
+      if (textElement) {
+        textElement.textContent = '';
+      }
     };
-  }, [])
+  }, [phrase]);
   
 
   return (

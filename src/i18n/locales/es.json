@@ -1,0 +1,82 @@
+{
+  "landing": {
+    "name": "Emely García",
+    "role": "Desarrolladora Frontend",
+    "phrase": "Diseñando, desarrollando y manteniendo aplicaciones web escalables y de alto rendimiento."
+  },
+  "experience": {
+    "title": "Mi Experiencia",
+    "description": "Hola, soy una Desarrolladora Front-End con casi 5 años de experiencia.\nMe encanta construir aplicaciones web rápidas y escalables que se vean y funcionen muy bien.\nMe siento cómoda trabajando con React, Angular y herramientas web modernas.\nHe trabajado con equipos Agile de diferentes partes del mundo, como India, Estados Unidos y Canadá.\nEl código limpio, las pruebas y el rendimiento son súper importantes para mí.",
+    "items": [
+      {
+        "id": 1,
+        "interval": "Ideas4Software: 2020-2021",
+        "description": "Como diseñadora y desarrolladora web, lideré el diseño y desarrollo de un sistema POS para pequeñas y medianas empresas.\nConstruí características clave para una aplicación móvil híbrida y ayudé a conectarla en múltiples plataformas."
+      },
+      {
+        "id": 2,
+        "interval": "YaVoy: Feb 2021 - Jun 2021",
+        "description": "Como desarrolladora Angular, trabajé para crear diseños de interfaz dinámicos y enfocados en negocios con usabilidad de primera clase y diseño responsive.\nConstruí código limpio y reutilizable con un fuerte enfoque en calidad y escalabilidad.\nEntregué actualizaciones constantemente, siguiendo las mejores prácticas de entrega continua."
+      },
+      {
+        "id": 3,
+        "interval": "Wotdev: 2021 - Feb 2025",
+        "description": "Como Desarrolladora Frontend Senior tuve la oportunidad de trabajar en WOTDev y Quickplay, liderando y desarrollando proyectos para plataformas OTT.\nMe enfoqué en construir experiencias de streaming fluidas y rápidas para aplicaciones web y SmartTV.\nDiseñé interfaces limpias y de alto rendimiento usando HTML, CSS, JavaScript, TypeScript, Angular y React.\nConstruí y mantuve SDKs para ayudar a diferentes clientes a conectarse fácilmente a las plataformas.\nTrabajé directamente con equipos Agile para impulsar proyectos y entregar excelentes resultados."
+      },
+      {
+        "id": 4,
+        "interval": "Elaniin: Jul 2025 - Presente",
+        "description": "Actualmente trabajo como Desarrolladora React en Elaniin, contribuyendo a un proyecto gubernamental a gran escala junto a un equipo de más de 10 colaboradores, entregando una solución web robusta y escalable.\n\nMi rol se enfoca en construir interfaces de usuario de alto rendimiento y mantenibles usando React, TypeScript y tecnologías frontend modernas, traduciendo requisitos de negocio y especificaciones de diseño en componentes eficientes y reutilizables. Trabajo activamente en optimización de rendimiento, integración de APIs y asegurando una experiencia de usuario fluida y responsiva. Colaboro estrechamente con diseñadores, gerentes de producto e ingenieros en un entorno Agile, participando en revisiones de código, mejoras continuas y la adopción de mejores prácticas."
+      }
+    ]
+  },
+  "skills": {
+    "title": "Mis Habilidades",
+    "categories": [
+      {
+        "id": 1,
+        "title": "Lenguajes de Programación"
+      },
+      {
+        "id": 2,
+        "title": "Frameworks y Librerías"
+      },
+      {
+        "id": 3,
+        "title": "Bases de Datos"
+      },
+      {
+        "id": 4,
+        "title": "Herramientas e IDEs"
+      },
+      {
+        "id": 5,
+        "title": "Gestión de Proyectos y Colaboración"
+      },
+      {
+        "id": 6,
+        "title": "Nube y DevOps"
+      }
+    ]
+  },
+  "quote": {
+    "author": "Steve Jobs",
+    "text": "La única manera de hacer un gran trabajo es amar lo que haces."
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "sourceCode": "Código Fuente",
+    "liveDemo": "Demo en Vivo",
+    "takeLook": "¡Echa un vistazo!"
+  },
+  "contact": {
+    "title": "¿Interesado en colaborar conmigo?",
+    "subtitle1": "Siempre estoy abierta a discutir proyectos u oportunidades de colaboración.",
+    "subtitle2": "Puedes contactarme a través de mis redes sociales.",
+    "message": "¡Estaré feliz de responder!",
+    "copyright": "devemg 2025 (v3.0.0)"
+  },
+  "language": {
+    "switch": "Cambiar idioma"
+  }
+}
