@@ -1,8 +1,9 @@
 import {ActiveTab} from "@models/types.ts";
 import {Link} from "react-router";
+import {TerminalIcon} from "lucide-react";
 
 
-export const FooterView =()=> {
+export const FooterView = () => {
     const currentYear = new Date().getFullYear();
 
     return (
@@ -14,14 +15,13 @@ export const FooterView =()=> {
                 <div className="flex flex-col gap-3">
                     <div className="flex items-center gap-3">
             <span className="material-symbols-outlined text-[#d0bcff] text-sm glow-primary">
-              terminal
+              <TerminalIcon/>
             </span>
                         <span className="font-mono text-[12px] text-[#d0bcff] tracking-[0.2em] font-bold uppercase">
-              DIGITAL_ARCHITECT © {currentYear}
+              devemg © {currentYear} v4.0.0
             </span>
                     </div>
                     <span className="font-sans text-xs text-[#cbc3d7] max-w-sm leading-relaxed">
-            Engineered with absolute precision for the high-performance modern web. Powered by Cyber-Architect v12.
           </span>
                 </div>
 
@@ -46,16 +46,6 @@ export const FooterView =()=> {
                     >
                         <span className="w-0 group-hover:w-3 h-[1px] bg-[#d0bcff] transition-all duration-300"/>
                         LINKEDIN
-                    </a>
-                    <a
-                        href="https://twitter.com"
-                        target="_blank"
-                        key="x-social"
-                        rel="noopener noreferrer"
-                        className="group text-[11px] font-mono text-[#cbc3d7] hover:text-[#d0bcff] transition-all tracking-[0.25em] flex items-center gap-2 font-bold"
-                    >
-                        <span className="w-0 group-hover:w-3 h-[1px] bg-[#d0bcff] transition-all duration-300"/>
-                        X_SOCIAL
                     </a>
                     <Link
                         to={ActiveTab.Experience}

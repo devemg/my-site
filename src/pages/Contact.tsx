@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import {useForm} from 'react-hook-form';
 import {contactFormResolver, type ContactFormValues} from '../schemas/contact.shema';
 import {twMerge} from "tailwind-merge";
+import {ArrowRightIcon, CodeIcon, MailIcon, PlusIcon, SendHorizontalIcon, Share2Icon} from "lucide-react";
 
 const ContactPage = () => {
     const [submittingState, setSubmittingState] = useState<'idle' | 'dispatching' | 'sent'>('idle');
@@ -138,7 +139,7 @@ const ContactPage = () => {
                                     isDisabled && "opacity-50")}
                             >
                                 DISPATCH MESSAGE
-                                <span className="material-symbols-outlined text-[18px]">send</span>
+                                <span className="material-symbols-outlined text-[18px]"><SendHorizontalIcon size={14} /></span>
                             </button>
                         )}
 
@@ -184,21 +185,21 @@ const ContactPage = () => {
                                 {
                                     name: 'Github',
                                     color: 'hover:bg-[#d0bcff]/10',
-                                    icon: 'code',
+                                    icon: <CodeIcon />,
                                     textCol: 'text-[#d0bcff]',
                                     link: 'https://github.com'
                                 },
                                 {
                                     name: 'LinkedIn',
                                     color: 'hover:bg-[#4cd7f6]/10',
-                                    icon: 'share',
+                                    icon: <Share2Icon />,
                                     textCol: 'text-[#4cd7f6]',
                                     link: 'https://linkedin.com'
                                 },
                                 {
-                                    name: 'Twitter / X',
+                                    name: 'Gmail',
                                     color: 'hover:bg-[#ffafd3]/10',
-                                    icon: 'grid_view',
+                                    icon: <MailIcon />,
                                     textCol: 'text-[#ffafd3]',
                                     link: 'https://twitter.com'
                                 }
@@ -220,7 +221,7 @@ const ContactPage = () => {
                                     </div>
                                     <span
                                         className={`material-symbols-outlined ${soc.textCol} opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all`}>
-                    arrow_forward
+                    <ArrowRightIcon />
                   </span>
                                 </a>
                             ))}
@@ -266,7 +267,7 @@ const ContactPage = () => {
                                     <div
                                         className="w-10 h-10 rounded-full border-2 border-[#0b1326] bg-[#222a3d] flex items-center justify-center">
                     <span className="material-symbols-outlined text-[#d0bcff] text-base font-extrabold select-none">
-                      add
+                        <PlusIcon />
                     </span>
                                     </div>
                                 </div>

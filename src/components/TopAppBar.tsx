@@ -1,8 +1,9 @@
 import {useState} from 'react';
 import {ActiveTab} from "@models/types.ts";
 import {Link, NavLink} from "react-router";
+import {MenuIcon, TerminalIcon, XIcon} from "lucide-react";
 
-export const TopAppBar =() => {
+export const TopAppBar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const navItems = [
@@ -23,12 +24,12 @@ export const TopAppBar =() => {
           <span
               className="material-symbols-outlined text-[#d0bcff] glow-primary transition-transform duration-500 group-hover:rotate-45"
               style={{fontVariationSettings: "'FILL' 1"}}>
-            terminal
+            <TerminalIcon/>
           </span>
                     <span
                         className="font-mono text-xs font-bold tracking-[0.2em] text-[#d0bcff] relative overflow-hidden"
                     >
-            DIGITAL_ARCHITECT
+            Emely García
           </span>
                 </Link>
 
@@ -62,9 +63,9 @@ export const TopAppBar =() => {
 
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="material-symbols-outlined text-[#cbc3d7] hover:bg-[#222a3d] transition-all p-2 rounded-lg cursor-pointer md:hidden"
+                        className="text-[#cbc3d7] hover:bg-[#222a3d] transition-all p-2 rounded-lg cursor-pointer hidden"
                     >
-                        {mobileMenuOpen ? 'close' : 'menu'}
+                        {mobileMenuOpen ? <XIcon/> : <MenuIcon/>}
                     </button>
                 </div>
             </div>

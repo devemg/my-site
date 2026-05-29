@@ -1,16 +1,25 @@
 import { useState } from 'react';
 import {ActiveTab} from "@models/types.ts";
 import {Link} from "react-router";
+import {
+  ArrowRightIcon, BadgeCheckIcon,
+  BoxIcon,
+  Building2Icon, CheckIcon,
+  LayersIcon,
+  PaletteIcon,
+  ProportionsIcon,
+  SquareTerminalIcon
+} from "lucide-react";
 
 const ExperiencePage = () => {
   // Interactive status for stack ratings
   const [selectedStackInfo, setSelectedStackInfo] = useState<string | null>(null);
 
   const coreStackItems = [
-    { name: 'React / Next.js', rawValue: 95, icon: 'token' },
-    { name: 'TypeScript', rawValue: 90, icon: 'terminal' },
-    { name: 'Tailwind CSS', rawValue: 100, icon: 'palette' },
-    { name: 'Vue.js / Nuxt', rawValue: 40, icon: 'deployed_code', muted: true }
+    { name: 'React / Next.js', rawValue: 95, icon: <ProportionsIcon /> },
+    { name: 'TypeScript', rawValue: 90, icon: <SquareTerminalIcon /> },
+    { name: 'Tailwind CSS', rawValue: 100, icon: <PaletteIcon /> },
+    { name: 'Vue.js / Nuxt', rawValue: 40, icon: <BoxIcon />, muted: true }
   ];
 
   const handleStackHover = (name: string, value: number) => {
@@ -41,7 +50,7 @@ const ExperiencePage = () => {
               <div className="flex gap-4 items-center">
                 <div className="w-12 h-12 rounded-lg bg-[#d0bcff]/10 flex items-center justify-center border border-[#d0bcff]/20">
                   <span className="material-symbols-outlined text-[#d0bcff]">
-                    corporate_fare
+                    <Building2Icon />
                   </span>
                 </div>
                 <div>
@@ -91,7 +100,7 @@ const ExperiencePage = () => {
           <div>
             <div className="w-10 h-10 rounded-lg bg-[#4cd7f6]/10 flex items-center justify-center mb-5 border border-[#4cd7f6]/20">
               <span className="material-symbols-outlined text-[#4cd7f6]">
-                layers
+                <LayersIcon />
               </span>
             </div>
             <h3 className="font-sans text-lg md:text-xl font-bold text-white mb-2">
@@ -143,7 +152,7 @@ const ExperiencePage = () => {
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-lg bg-[#4cd7f6]/10 flex items-center justify-center border border-[#4cd7f6]/20">
                 <span className="material-symbols-outlined text-[#4cd7f6]">
-                  architecture
+                  <Building2Icon />
                 </span>
               </div>
               <div>
@@ -168,7 +177,7 @@ const ExperiencePage = () => {
             >
               <span className="font-mono text-xs font-semibold">12+ Global Clients serviced</span>
               <span className="material-symbols-outlined text-[#4cd7f6] group-hover/link:translate-x-1 transition-transform">
-                arrow_forward
+                <ArrowRightIcon />
               </span>
             </Link>
           </div>
@@ -197,7 +206,7 @@ const ExperiencePage = () => {
                   <li key={item} className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full bg-[#4cd7f6]/20 flex items-center justify-center">
                       <span className="material-symbols-outlined text-[#4cd7f6] text-[10px] font-bold">
-                        check
+                        <CheckIcon size={16} />
                       </span>
                     </div>
                     {item}
@@ -253,7 +262,7 @@ const ExperiencePage = () => {
           <div className="flex gap-4 items-center relative z-10 w-full sm:w-auto">
             <div className="w-10 h-10 rounded-full bg-[#d0bcff]/20 flex items-center justify-center shrink-0">
               <span className="material-symbols-outlined text-[#d0bcff]">
-                verified
+                <BadgeCheckIcon size={20} />
               </span>
             </div>
             <div>

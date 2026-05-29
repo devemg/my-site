@@ -1,13 +1,21 @@
 import {useState} from 'react';
 import {ActiveTab} from "@models/types.ts";
 import {Link} from "react-router";
+import {
+    ArrowRightIcon,
+    BadgeCheckIcon, CircleCheckBigIcon, CogIcon,
+    DraftingCompassIcon,
+    LayersIcon, PaletteIcon,
+    PencilLineIcon, PickaxeIcon,
+    ZapIcon
+} from "lucide-react";
 
 const HomePage = () => {
     const [optimizerValue, setOptimizerValue] = useState(96.2);
     const [clickedStack, setClickedStack] = useState<string | null>(null);
     const [terminalLogs, setTerminalLogs] = useState<string[]>([
         'SYSTEM: READY_FOR_DEPLOYMENT',
-        'AGENT: Cyber-Architect v12 initialized successfully.',
+        'AGENT: devemg v_2026 initialized successfully.',
     ]);
 
     const handleOptimiseClick = () => {
@@ -66,13 +74,13 @@ const HomePage = () => {
                             <span>VIEW PROJECTS</span>
                             <span
                                 className="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">
-                arrow_forward
+                <ArrowRightIcon/>
               </span>
                         </Link>
 
                         <Link
                             to={ActiveTab.Contact}
-                            className="px-8 py-4 glass-card text-[#dae2fd] font-mono text-xs font-bold tracking-widest rounded-lg hover:bg-[#222a3d]/80 transition-all active:scale-95 border-white/10 cursor-pointer"
+                            className="px-8 py-4 flex items-center glass-card text-[#dae2fd] font-mono text-xs font-bold tracking-widest rounded-lg hover:bg-[#222a3d]/80 transition-all active:scale-95 border-white/10 cursor-pointer"
                         >
                             CONTACT_PROTOCOL
                         </Link>
@@ -120,7 +128,7 @@ const HomePage = () => {
                             <div className="flex items-center gap-2 mb-3">
                 <span className="material-symbols-outlined text-[#4cd7f6] glow-accent text-sm"
                       style={{fontVariationSettings: "'FILL' 1"}}>
-                  verified
+                  <BadgeCheckIcon/>
                 </span>
                                 <span
                                     className="font-mono text-[9px] text-[#dae2fd] tracking-wider font-extrabold uppercase">
@@ -155,7 +163,7 @@ const HomePage = () => {
                         className="md:col-span-5 glass-card p-10 rounded-3xl flex flex-col justify-between group hover:border-[#d0bcff]/50 transition-all duration-300">
             <span
                 className="material-symbols-outlined text-[#d0bcff] text-5xl mb-12 glow-primary group-hover:scale-110 transition-transform">
-              architecture
+              <DraftingCompassIcon/>
             </span>
                         <div>
                             <h3 className="font-sans text-xl md:text-2xl mb-4 text-[#d0bcff] font-bold">
@@ -175,7 +183,7 @@ const HomePage = () => {
                             className="glass-card p-8 rounded-3xl group hover:border-[#4cd7f6]/50 transition-all duration-300 md:translate-y-6">
               <span
                   className="material-symbols-outlined text-[#4cd7f6] text-4xl mb-6 glow-accent group-hover:rotate-12 transition-transform">
-                bolt
+                <ZapIcon/>
               </span>
                             <h3 className="font-sans text-lg md:text-xl mb-3 font-semibold text-[#dae2fd]">
                                 Performance Core
@@ -191,7 +199,7 @@ const HomePage = () => {
                             className="glass-card p-8 rounded-3xl group hover:border-[#ffafd3]/50 transition-all duration-300">
               <span
                   className="material-symbols-outlined text-[#ffafd3] text-4xl mb-6 filter drop-shadow(0 0 8px rgba(255,175,211,0.5)) group-hover:-rotate-12 transition-transform">
-                draw
+                <PencilLineIcon/>
               </span>
                             <h3 className="font-sans text-lg md:text-xl mb-3 font-semibold text-[#dae2fd]">
                                 Visual Fidelity
@@ -213,7 +221,7 @@ const HomePage = () => {
                     <div>
                         <h2 className="font-sans text-2xl md:text-3xl font-extrabold flex items-center gap-4 text-[#dae2fd]">
               <span className="material-symbols-outlined text-[#d0bcff] glow-primary">
-                layers
+                <LayersIcon/>
               </span>
                             Technical Stack
                         </h2>
@@ -235,14 +243,14 @@ const HomePage = () => {
                         <div
                             className="absolute top-0 right-0 p-8 opacity-[0.05] text-[#d0bcff] group-hover:opacity-[0.15] transition-opacity duration-300">
               <span className="material-symbols-outlined text-[100px] select-none">
-                layers
+                <LayersIcon/>
               </span>
                         </div>
 
                         <div className="flex items-center gap-4 mb-8">
                             <div
                                 className="p-3 rounded-xl bg-[#d0bcff]/15 text-[#d0bcff] shadow-[0_0_20px_rgba(208,188,255,0.3)]">
-                                <span className="material-symbols-outlined">layers</span>
+                                <span className="material-symbols-outlined"><LayersIcon/></span>
                             </div>
                             <h3 className="font-sans text-[#dae2fd] text-lg md:text-xl font-bold tracking-tight">
                                 Core Infrastructure
@@ -268,7 +276,7 @@ const HomePage = () => {
                         className="lg:col-span-3 glass-card p-8 md:p-10 rounded-2xl border-t-[6px] border-[#4cd7f6]/40 hover:bg-[#171f33]/30 transition-all duration-300">
                         <div className="flex items-center gap-4 mb-8">
                             <div className="p-3 rounded-xl bg-[#4cd7f6]/15 text-[#4cd7f6] glow-accent">
-                                <span className="material-symbols-outlined">palette</span>
+                                <span className="material-symbols-outlined"><PaletteIcon/></span>
                             </div>
                             <h3 className="font-sans text-[#dae2fd] text-lg md:text-xl font-bold">
                                 Styling
@@ -288,7 +296,7 @@ const HomePage = () => {
                                 >
                   <span
                       className="material-symbols-outlined text-[#4cd7f6] text-xl glow-accent group-hover/item:scale-125 transition-transform">
-                    check_circle
+                    <CircleCheckBigIcon size={16} />
                   </span>
                                     <div>
                                         <span className="block font-semibold">{styleItem.name}</span>
@@ -306,7 +314,7 @@ const HomePage = () => {
                         <div className="flex items-center gap-4 mb-8">
                             <div
                                 className="p-3 rounded-xl bg-[#ffafd3]/20 text-[#ffafd3] filter drop-shadow(0 0 8px rgba(255,175,211,0.4))">
-                                <span className="material-symbols-outlined">settings_suggest</span>
+                                <span className="material-symbols-outlined"><CogIcon /></span>
                             </div>
                             <h3 className="font-sans text-[#dae2fd] text-lg md:text-xl font-bold">
                                 Toolchain
@@ -335,7 +343,7 @@ const HomePage = () => {
                                         <span
                                             className="text-[#d0bcff] font-extrabold uppercase animate-pulse">OPTIMIZED</span>
                                         <span
-                                            className="material-symbols-outlined text-[10px] text-[#4cd7f6]">construction</span>
+                                            className="material-symbols-outlined text-[10px] text-[#4cd7f6]"><PickaxeIcon size={14} /></span>
                                     </div>
                                 </div>
                                 <div

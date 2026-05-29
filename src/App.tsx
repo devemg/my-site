@@ -62,11 +62,11 @@ export default function App() {
                 <Outlet/>
             </main>
             {/* 5. Custom Status Bar overlay indicator for design depth */}
-            <div
-                className="fixed bottom-3 left-6 z-30 pointer-events-none hidden sm:flex items-center gap-2 font-mono text-[9px] text-[#4cd7f6]/60 bg-[#060e20]/60 px-2.5 py-1 rounded border border-[#494454]/20 backdrop-blur-sm">
-                <span className="w-1.5 h-1.5 bg-[#4cd7f6] rounded-full animate-pulse"/>
-                <span>CYBER_SYS_STATE: SECURE // INDEXED</span>
-            </div>
+            {/*<div*/}
+            {/*    className="fixed bottom-3 left-6 z-30 pointer-events-none hidden sm:flex items-center gap-2 font-mono text-[9px] text-[#4cd7f6]/60 bg-[#060e20]/60 px-2.5 py-1 rounded border border-[#494454]/20 backdrop-blur-sm">*/}
+            {/*    <span className="w-1.5 h-1.5 bg-[#4cd7f6] rounded-full animate-pulse"/>*/}
+            {/*    <span>CYBER_SYS_STATE: SECURE // INDEXED</span>*/}
+            {/*</div>*/}
 
             {/* 6. Footer Layout */}
             <FooterView/>
