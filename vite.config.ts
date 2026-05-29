@@ -12,6 +12,8 @@ export default defineConfig({
       '@data': '/src/data',
       '@models': '/src/models',
       '@components': '/src/components',
+      '@pages': '/src/pages',
+      '@utils': '/src/utils',
     },
   },
 })

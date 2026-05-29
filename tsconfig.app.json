@@ -28,6 +28,8 @@
       "@data/*": ["./data/*"],
       "@models/*": ["./models/*"],
       "@components/*": ["./components/*"],
+      "@pages/*": ["./pages/*"],
+      "@utils/*": ["./utils/*"]
     }
   },
   "include": ["src"]
