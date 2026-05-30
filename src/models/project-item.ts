@@ -1,3 +1,12 @@
+import {Section} from "@models/section.ts";
+
+export  interface ProjectsSection {
+    bottom?: {
+        leftCard?: Section;
+        rightCard?: Section;
+    }
+}
+
 export interface ProjectItem {
     id: string;
     name: string;
