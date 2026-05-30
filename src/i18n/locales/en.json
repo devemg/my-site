@@ -125,6 +125,68 @@
         "hint": "unique tags"
       }
     }
+    ,
+    "descriptions": {
+      "random-qa": "RandomAQ is a question-and-answer application developed for educational purposes and built as two connected apps working together.\nThe Angular admin panel lets administrators create and manage categories, questions, and answers through a structured interface. The Ionic mobile app lets users pick a category and receive a randomly generated question with a 30-second timer.\nRandomAQ shows full-stack thinking, cross-platform delivery, and real-time interaction design.",
+      "fast-messages": "FastMessages is a real-time messaging application developed for educational purposes with the MEAN stack and Socket.IO.\nUsers can create accounts, log in securely, manage contact lists, and exchange instant messages with live updates.\nThe project demonstrates full-stack development, real-time data handling, and scalable application architecture.",
+      "wheather-tv": "Weather TV is one of my first TV projects, built with React for the Tizen-Samsung OS.\nIt retrieves the user's location and real-time weather data, then presents the information in a clean interface optimized for TV screens.\nThe project shows how to adapt web technologies for smart TV environments, integrate external APIs, and build friendly interfaces with React.",
+      "ecom-app": "Ecom App is a modern online shop frontend project built with React and Redux Toolkit.\nThe UI was designed in Figma and includes product listings, detailed product pages, cart management, and state persistence through Redux.\nThe project highlights a scalable frontend architecture, efficient state management, and a user-centered design approach.",
+      "playely-web": "Playely Web is a multilingual OTT frontend project built with Angular and Angular Material.\nIt integrates with TMDB to fetch movies and TV shows, and it includes lazy loading, a collections view, and a custom player screen.\nThe project is responsive, modular, and designed to showcase maintainable Angular architecture.",
+      "playely-tv": "Playely TV is an OTT frontend project built with React and integrated with TMDB.\nIt includes a collections view, a custom player screen, and was tested on a Samsung Smart TV to validate TV-specific layout and performance needs.\nThe project highlights React development, media-focused interfaces, and smart TV optimization.",
+      "swiftmap-app": "SwiftMap is a React project built with Leaflet to create an interactive mapping experience.\nThe application follows Taylor Swift's concert tour around the world and displays detailed information for each show.\nIt demonstrates third-party library integration, interactive UI development, and creative data presentation.",
+      "brisland-ui-app": "Brisland UI App is a tourism-focused country page built with React and enhanced with GSAP animations.\nThe application presents a fictional travel destination through a visually engaging and interactive interface with responsive layouts and motion effects.\nIt demonstrates frontend design, animation work, and user experience best practices.",
+      "invittalo-admin-app": "Invittalo Admin is a production-ready application built with Angular 17 and Angular Material.\nIt is designed to manage invitations and confirmations for events, including guest lists, invitation delivery, and RSVP tracking.\nThe project shows clean UI work, responsive design, and scalable architecture for a real-world workflow.",
+      "invittalo-xv-app": "Invittalo XV is a production-ready invitation app built with Angular and animated with GSAP for a client's XV birthday event.\nIt presents the final digital invitation with the event location, date, gift table, and RSVP confirmation section in a personalized theme.\nThe project was developed with CI/CD practices and Git Flow, showing professional delivery and animation-focused Angular work."
+    }
+  },
+  "projectDetails": {
+    "notFound": {
+      "label": "project not found",
+      "title": "The requested project does not exist.",
+      "description": "The detail route needs a valid project id. Return to the projects index to open a supported project.",
+      "button": "Back to projects"
+    },
+    "breadcrumb": {
+      "projects": "Projects",
+      "details": "project details"
+    },
+    "actions": {
+      "openDemo": "Open demo",
+      "viewSource": "View source"
+    },
+    "architecture": {
+      "title": "architecture",
+      "badge": "case study",
+      "scopeTitle": "01. Scope",
+      "executionTitle": "02. Execution",
+      "executionFallback": "The page and data model are presented as a structured product with supporting media, links, and technical metadata."
+    },
+    "stats": {
+      "title": "system overview",
+      "coverage": {
+        "label": "Coverage",
+        "description": "Scope and feature breadth"
+      },
+      "polish": {
+        "label": "Polish",
+        "description": "Production readiness and finish"
+      },
+      "assets": {
+        "label": "Assets",
+        "description": "Screenshot and media depth"
+      },
+      "delivery": {
+        "label": "Delivery",
+        "description": "Availability of source and demo"
+      }
+    },
+    "gallery": {
+      "title": "gallery",
+      "frames": "frames",
+      "noScreenshots": "No screenshots available",
+      "previous": "Previous screenshot",
+      "next": "Next screenshot"
+    }
   },
   "contact": {
     "form": {

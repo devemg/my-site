@@ -1,16 +1,12 @@
-import {useEffect, useMemo, useState} from 'react';
+import {useMemo} from 'react';
 import {Link, useParams} from 'react-router';
-import {
-    ArrowRightIcon,
-    ChevronLeftIcon,
-    ChevronRightIcon,
-    Layers3Icon,
-    PlayIcon,
-    SquareTerminalIcon,
-} from 'lucide-react';
+import {ArrowRightIcon, PlayIcon, SquareTerminalIcon} from 'lucide-react';
+import {useTranslation} from 'react-i18next';
 import {ActiveTab} from '@models/types';
 import {ProjectItem} from '@models/project-item';
-import {devemgProjects} from '../data/projects.data';
+import {getDevemgProjects} from '../data/projects.data';
+import {StatsDetails} from "@components/project-details/StatsDetails.tsx";
+import {Gallery} from "@components/project-details/Gallery.tsx";
 
 const splitDescription = (description: string) =>
     description
@@ -51,93 +47,35 @@ const getDetailText = (project: ProjectItem) => {
 };
 
 const ProjectDetailsPage = () => {
+    const {t, i18n} = useTranslation();
     const {key} = useParams();
+    const projects = useMemo(() => getDevemgProjects(), [i18n.language]);
     const resolvedProject = useMemo(
-        () => devemgProjects.find((item) => item.id === key),
-        [key],
+        () => projects.find((item) => item.id === key),
+        [key, projects],
     );
-    const project = resolvedProject ?? devemgProjects[0];
-    const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+    const project = resolvedProject ?? projects[0];
     const detailText = getDetailText(project);
     const projectTags = inferProjectTags(project);
-    const projectImages = project.images ?? [];
-    const activeImage = projectImages[selectedImageIndex] ?? projectImages[0];
-
-    const metrics = [
-        {
-            label: 'Coverage',
-            value: Math.min(100, 70 + projectTags.length * 4 + (projectImages.length > 0 ? 10 : 0)),
-            desc: 'Scope and feature breadth',
-            color: '#4cd7f6',
-        },
-        {
-            label: 'Polish',
-            value: project.demoUrl ? 99 : 92,
-            desc: 'Production readiness and finish',
-            color: '#d0bcff',
-        },
-        {
-            label: 'Assets',
-            value: Math.min(100, projectImages.length * 12 + 40),
-            desc: 'Screenshot and media depth',
-            color: '#ffafd3',
-        },
-        {
-            label: 'Delivery',
-            value: project.codeUrl && project.demoUrl ? 100 : 94,
-            desc: 'Availability of source and demo',
-            color: '#4cd7f6',
-        },
-    ];
-
-    useEffect(() => {
-        setSelectedImageIndex(0);
-    }, [project.id]);
-
-    useEffect(() => {
-        const handleKeyDown = (event: KeyboardEvent) => {
-            if (event.key === 'Escape') {
-                setSelectedImageIndex(0);
-            }
-
-            if (projectImages.length <= 1) {
-                return;
-            }
-
-            if (event.key === 'ArrowLeft') {
-                setSelectedImageIndex((current) =>
-                    current === 0 ? projectImages.length - 1 : current - 1,
-                );
-            }
-
-            if (event.key === 'ArrowRight') {
-                setSelectedImageIndex((current) =>
-                    current === projectImages.length - 1 ? 0 : current + 1,
-                );
-            }
-        };
-
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [projectImages.length]);
 
     if (!key || !resolvedProject) {
         return (
             <section className="space-y-8">
                 <div className="rounded-xl border border-slate-700 bg-slate-950/80 p-8 backdrop-blur-xl">
                     <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-cyan-300">
-                        project not found
+                        {t('projectDetails.notFound.label')}
                     </p>
-                    <h1 className="mt-3 text-3xl font-bold text-slate-100">The requested project does not exist.</h1>
+                    <h1 className="mt-3 text-3xl font-bold text-slate-100">
+                        {t('projectDetails.notFound.title')}
+                    </h1>
                     <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">
-                        The detail route needs a valid project id. Return to the projects index to open a supported
-                        project.
+                        {t('projectDetails.notFound.description')}
                     </p>
                     <Link
                         to={ActiveTab.Projects}
                         className="mt-6 inline-flex items-center gap-2 rounded-md bg-linear-to-r from-violet-500 to-cyan-400 px-4 py-3 font-mono text-xs font-bold uppercase tracking-[0.22em] text-white"
                     >
-                        Back to projects
+                        {t('projectDetails.notFound.button')}
                         <ArrowRightIcon size={16}/>
                     </Link>
                 </div>
@@ -158,10 +96,11 @@ const ProjectDetailsPage = () => {
                     <div
                         className="inline-flex w-fit items-center gap-3 rounded-full border border-slate-700 bg-slate-950/70 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.28em] text-cyan-300 backdrop-blur-xl">
                         <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.75)]"/>
-                        <Link to={ActiveTab.Projects}
-                              className={"hover:underline"}
-                        > Projects </Link> //
-                        project details: {project.id}
+                        <Link to={ActiveTab.Projects} className="hover:underline">
+                            {t('projectDetails.breadcrumb.projects')}
+                        </Link>
+                        //
+                        {t('projectDetails.breadcrumb.details')}: {project.id}
                     </div>
 
                     <div className="space-y-5 pt-5">
@@ -173,7 +112,7 @@ const ProjectDetailsPage = () => {
                                 {detailText.lead}
                             </p>
                         </div>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="mt-4 flex flex-wrap gap-2">
                             {projectTags.map((tag) => (
                                 <span
                                     key={tag}
@@ -183,7 +122,6 @@ const ProjectDetailsPage = () => {
                                     </span>
                             ))}
                         </div>
-
                         <div className="flex flex-wrap gap-3">
                             {project.demoUrl && (
                                 <a
@@ -192,7 +130,7 @@ const ProjectDetailsPage = () => {
                                     rel="noreferrer noopener"
                                     className="inline-flex items-center gap-3 rounded-md bg-linear-to-r from-violet-500 to-cyan-400 px-5 py-3 font-mono text-xs font-bold uppercase tracking-[0.24em] text-white transition-all hover:brightness-110 hover:shadow-[0_0_18px_rgba(34,211,238,0.25)] active:scale-[0.98]"
                                 >
-                                    Open demo
+                                    {t('projectDetails.actions.openDemo')}
                                     <PlayIcon size={16}/>
                                 </a>
                             )}
@@ -203,7 +141,7 @@ const ProjectDetailsPage = () => {
                                     rel="noreferrer noopener"
                                     className="inline-flex items-center gap-3 rounded-md border border-cyan-400/60 px-5 py-3 font-mono text-xs font-bold uppercase tracking-[0.24em] text-cyan-300 transition-colors hover:bg-cyan-400/10"
                                 >
-                                    View source
+                                    {t('projectDetails.actions.viewSource')}
                                     <SquareTerminalIcon size={16}/>
                                 </a>
                             )}
@@ -212,34 +150,7 @@ const ProjectDetailsPage = () => {
                 </div>
 
                 <div className="lg:col-span-4">
-                    <div className="rounded-xl border border-slate-700 bg-slate-950/70 p-5 backdrop-blur-xl">
-                        <div className="mb-5 flex items-center justify-between border-b border-slate-800 pb-4">
-                            <div>
-                                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-slate-400">
-                                    system overview
-                                </p>
-                            </div>
-                            <Layers3Icon className="text-cyan-300" size={20}/>
-                        </div>
-
-                        <div className="grid grid-cols-2 gap-3">
-                            {metrics.map((metric) => (
-                                <button
-                                    key={metric.label}
-                                    type="button"
-                                    className="rounded-lg border border-slate-800 bg-slate-900/70 p-4 text-left transition-colors hover:border-cyan-400/40"
-                                >
-                                    <div className="font-display text-3xl font-bold text-slate-100">{metric.value}</div>
-                                    <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em]"
-                                         style={{color: metric.color}}>
-                                        {metric.label}
-                                    </div>
-                                    <p className="mt-1 text-xs text-slate-400">{metric.desc}</p>
-                                </button>
-                            ))}
-                        </div>
-
-                    </div>
+                    <StatsDetails project={project} projectImages={project.images ?? []} projectTags={projectTags}/>
                 </div>
             </header>
 
@@ -249,12 +160,12 @@ const ProjectDetailsPage = () => {
                     <div className="flex items-center justify-between border-b border-slate-800 px-5 py-4">
                         <div>
                             <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-slate-400">
-                                architecture
+                                {t('projectDetails.architecture.title')}
                             </p>
                         </div>
                         <span
                             className="rounded-full border border-violet-400/30 bg-violet-500/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-violet-200">
-                            case study
+                            {t('projectDetails.architecture.badge')}
                         </span>
                     </div>
 
@@ -262,7 +173,7 @@ const ProjectDetailsPage = () => {
                         <div className="grid gap-5 md:grid-cols-2">
                             <div className="rounded-lg border border-slate-800 bg-slate-950/70 p-5">
                                 <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-cyan-300">
-                                    01. Scope
+                                    {t('projectDetails.architecture.scopeTitle')}
                                 </p>
                                 <p className="mt-3 text-sm leading-6 text-slate-300">
                                     {detailText.body[0] ?? detailText.lead}
@@ -270,102 +181,16 @@ const ProjectDetailsPage = () => {
                             </div>
                             <div className="rounded-lg border border-slate-800 bg-slate-950/70 p-5">
                                 <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-violet-300">
-                                    02. Execution
+                                    {t('projectDetails.architecture.executionTitle')}
                                 </p>
                                 <p className="mt-3 text-sm leading-6 text-slate-300">
-                                    {detailText.body[1] ??
-                                        'The page and data model are presented as a structured product with supporting media, links, and technical metadata.'}
+                                    {detailText.body[1] ?? t('projectDetails.architecture.executionFallback')}
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div className="xl:col-span-5 rounded-xl border border-slate-700 bg-slate-950/70 p-5 backdrop-blur-xl">
-                    <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-                        <div>
-                            <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-slate-400">
-                                gallery
-                            </p>
-                        </div>
-                        <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-300">
-                            {projectImages.length.toString().padStart(2, '0')} frames
-                        </span>
-                    </div>
-
-                    <div className="mt-5 space-y-4">
-                        <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/60">
-                            {activeImage ? (
-                                <img
-                                    src={activeImage.src}
-                                    alt={activeImage.alt ?? project.name}
-                                    className="h-auto w-full object-cover"
-                                    referrerPolicy="no-referrer"
-                                />
-                            ) : (
-                                <div
-                                    className="flex min-h-70 items-center justify-center bg-slate-900 text-slate-400">
-                                    No screenshots available
-                                </div>
-                            )}
-                        </div>
-
-                        {projectImages.length > 1 && (
-                            <div className="flex items-center gap-2">
-                                <button
-                                    type="button"
-                                    onClick={() =>
-                                        setSelectedImageIndex((current) =>
-                                            current === 0 ? projectImages.length - 1 : current - 1,
-                                        )
-                                    }
-                                    className="rounded-md border border-slate-700 bg-slate-900/80 p-2 text-slate-300 transition-colors hover:border-cyan-400/60 hover:text-cyan-200"
-                                    aria-label="Previous screenshot"
-                                >
-                                    <ChevronLeftIcon size={16}/>
-                                </button>
-                                <div
-                                    className="flex flex-1 gap-2 overflow-x-auto scrollbar-thin scrollbar-thumb-slate-400 pb-1">
-                                    {projectImages.map((image, index) => {
-                                        const active = index === selectedImageIndex;
-
-                                        return (
-                                            <button
-                                                key={image.id}
-                                                type="button"
-                                                onClick={() => setSelectedImageIndex(index)}
-                                                className={`relative h-16 w-24 shrink-0 overflow-hidden rounded-md border transition-all ${
-                                                    active
-                                                        ? 'border-cyan-400 ring-1 ring-cyan-400/40'
-                                                        : 'border-slate-800 opacity-70 hover:opacity-100'
-                                                }`}
-                                            >
-                                                <img
-                                                    src={image.src}
-                                                    alt={image.alt ?? `${project.name} screenshot ${index + 1}`}
-                                                    className="h-full w-full object-cover"
-                                                    referrerPolicy="no-referrer"
-                                                />
-                                            </button>
-                                        );
-                                    })}
-                                </div>
-                                <button
-                                    type="button"
-                                    onClick={() =>
-                                        setSelectedImageIndex((current) =>
-                                            current === projectImages.length - 1 ? 0 : current + 1,
-                                        )
-                                    }
-                                    className="rounded-md border border-slate-700 bg-slate-900/80 p-2 text-slate-300 transition-colors hover:border-cyan-400/60 hover:text-cyan-200"
-                                    aria-label="Next screenshot"
-                                >
-                                    <ChevronRightIcon size={16}/>
-                                </button>
-                            </div>
-                        )}
-                    </div>
-                </div>
+                <Gallery project={project}/>
             </section>
         </section>
     );

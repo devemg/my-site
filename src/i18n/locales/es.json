@@ -125,6 +125,68 @@
         "hint": "etiquetas unicas"
       }
     }
+    ,
+    "descriptions": {
+      "random-qa": "RandomAQ es una aplicacion de preguntas y respuestas creada con fines educativos y construida como dos apps conectadas que trabajan juntas.\nEl panel de administracion en Angular permite crear y gestionar categorias, preguntas y respuestas desde una interfaz estructurada. La app movil en Ionic permite elegir una categoria y recibir una pregunta generada aleatoriamente con un temporizador de 30 segundos.\nRandomAQ demuestra pensamiento full-stack, entrega multiplataforma y diseno de interaccion en tiempo real.",
+      "fast-messages": "FastMessages es una aplicacion de mensajeria en tiempo real creada con fines educativos usando MEAN stack y Socket.IO.\nLos usuarios pueden crear cuentas, iniciar sesion de forma segura, gestionar su lista de contactos y enviar mensajes instantaneos con actualizaciones en vivo.\nEl proyecto demuestra desarrollo full-stack, manejo de datos en tiempo real y una arquitectura escalable.",
+      "wheather-tv": "Weather TV es uno de mis primeros proyectos para TV, construido con React para el sistema Tizen-Samsung.\nObtiene la ubicacion del usuario y datos meteorologicos en tiempo real, y luego presenta la informacion en una interfaz limpia optimizada para pantallas de TV.\nEl proyecto muestra como adaptar tecnologias web a entornos de smart TV, integrar APIs externas y construir interfaces amigables con React.",
+      "ecom-app": "Ecom App es un frontend moderno de tienda en linea construido con React y Redux Toolkit.\nLa interfaz fue disenada en Figma e incluye listado de productos, paginas de detalle, gestion del carrito y persistencia de estado con Redux.\nEl proyecto destaca una arquitectura frontend escalable, gestion eficiente de estado y un enfoque de diseno centrado en el usuario.",
+      "playely-web": "Playely Web es un proyecto frontend OTT multilenguaje construido con Angular y Angular Material.\nSe integra con TMDB para obtener peliculas y series, e incluye lazy loading, una vista de colecciones y una pantalla de reproductor personalizada.\nEl proyecto es responsive, modular y esta pensado para mostrar una arquitectura Angular mantenible.",
+      "playely-tv": "Playely TV es un proyecto frontend OTT construido con React e integrado con TMDB.\nIncluye una vista de colecciones, una pantalla de reproductor personalizada y fue probado en un Samsung Smart TV para validar necesidades de diseno y rendimiento propias de TV.\nEl proyecto destaca desarrollo en React, interfaces enfocadas en medios y optimizacion para smart TV.",
+      "swiftmap-app": "SwiftMap es un proyecto en React construido con Leaflet para crear una experiencia de mapa interactivo.\nLa aplicacion sigue la gira de conciertos de Taylor Swift alrededor del mundo y muestra informacion detallada de cada show.\nDemuestra integracion de librerias externas, desarrollo de UI interactiva y presentacion creativa de datos.",
+      "brisland-ui-app": "Brisland UI App es una pagina de turismo enfocada en un pais ficticio, construida con React y mejorada con animaciones de GSAP.\nLa aplicacion presenta un destino de viaje mediante una interfaz visual e interactiva con layouts responsivos y efectos de movimiento.\nDemuestra diseno frontend, trabajo de animacion y buenas practicas de experiencia de usuario.",
+      "invittalo-admin-app": "Invittalo Admin es una aplicacion lista para produccion construida con Angular 17 y Angular Material.\nEsta disenada para gestionar invitaciones y confirmaciones de eventos, incluyendo listas de invitados, envio de invitaciones y seguimiento de RSVP.\nEl proyecto muestra una UI limpia, diseno responsive y una arquitectura escalable para un flujo de trabajo real.",
+      "invittalo-xv-app": "Invittalo XV es una aplicacion de invitacion lista para produccion construida con Angular y animada con GSAP para el quinceanos de un cliente.\nPresenta la invitacion digital final con la ubicacion del evento, la fecha, la mesa de regalos y la seccion de confirmacion de asistencia en una tema personalizado.\nEl proyecto se desarrollo con practicas de CI/CD y Git Flow, mostrando entrega profesional y trabajo en Angular orientado a animacion."
+    }
+  },
+  "projectDetails": {
+    "notFound": {
+      "label": "proyecto no encontrado",
+      "title": "El proyecto solicitado no existe.",
+      "description": "La ruta de detalle necesita un id de proyecto valido. Regresa al indice de proyectos para abrir uno compatible.",
+      "button": "Volver a proyectos"
+    },
+    "breadcrumb": {
+      "projects": "Proyectos",
+      "details": "detalle del proyecto"
+    },
+    "actions": {
+      "openDemo": "Abrir demo",
+      "viewSource": "Ver codigo"
+    },
+    "architecture": {
+      "title": "arquitectura",
+      "badge": "caso de estudio",
+      "scopeTitle": "01. Alcance",
+      "executionTitle": "02. Ejecucion",
+      "executionFallback": "La pagina y el modelo de datos se presentan como un producto estructurado con medios de apoyo, enlaces y metadatos tecnicos."
+    },
+    "stats": {
+      "title": "resumen del sistema",
+      "coverage": {
+        "label": "Cobertura",
+        "description": "Alcance y amplitud funcional"
+      },
+      "polish": {
+        "label": "Pulido",
+        "description": "Preparacion y acabado de produccion"
+      },
+      "assets": {
+        "label": "Activos",
+        "description": "Profundidad de capturas y medios"
+      },
+      "delivery": {
+        "label": "Entrega",
+        "description": "Disponibilidad de codigo fuente y demo"
+      }
+    },
+    "gallery": {
+      "title": "galeria",
+      "frames": "Capturas",
+      "noScreenshots": "No hay capturas disponibles",
+      "previous": "Captura anterior",
+      "next": "Siguiente captura"
+    }
   },
   "contact": {
     "form": {
