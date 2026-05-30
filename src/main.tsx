@@ -1,6 +1,6 @@
 import {StrictMode} from 'react'
 import {createRoot} from 'react-dom/client'
-import {BrowserRouter, Route, Routes} from 'react-router';
+import {createBrowserRouter, RouterProvider} from 'react-router';
 import App from './App.tsx'
 import ContactPage from "@pages/Contact.tsx";
 import './i18n/config';
@@ -10,19 +10,23 @@ import ProjectsPage from "@pages/Projects.tsx";
 import HomePage from "@pages/Home.tsx";
 import ProjectDetailsPage from "@pages/ProjectDetails.tsx";
 
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <App/>,
+        children: [
+            {index: true, element: <HomePage/>},
+            {path: 'home', element: <HomePage/>},
+            {path: 'contact', element: <ContactPage/>},
+            {path: 'experience', element: <ExperiencePage/>},
+            {path: 'projects', element: <ProjectsPage/>},
+            {path: 'projects/:key', element: <ProjectDetailsPage/>},
+        ],
+    },
+]);
+
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<App/>}>
-                    <Route path="/" element={<HomePage/>}/>
-                    <Route path="/home" element={<HomePage/>}/>
-                    <Route path="/contact" element={<ContactPage/>}/>
-                    <Route path="/experience" element={<ExperiencePage/>}/>
-                    <Route path="/projects" element={<ProjectsPage/>}/>
-                    <Route path="/projects/:key" element={<ProjectDetailsPage/>}/>
-                </Route>
-            </Routes>
-        </BrowserRouter>
+        <RouterProvider router={router}/>
     </StrictMode>,
 )

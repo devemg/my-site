@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import {TopAppBar} from './components/TopAppBar';
 
 import {FooterView} from './components/FooterView';
-import {Outlet} from "react-router";
+import {Outlet, ScrollRestoration} from "react-router";
 
 export default function App() {
     const [cursorPos, setCursorPos] = useState({x: 0, y: 0});
@@ -59,6 +59,7 @@ export default function App() {
             {/* 4. Core Rendered Viewport Content (with smooth fade entrance) */}
             <main
                 className="flex-grow pt-32 pb-24 relative z-20 max-w-7xl w-full mx-auto px-6 md:px-16 animate-fade-in-up">
+                <ScrollRestoration />
                 <Outlet/>
             </main>
             {/* 5. Custom Status Bar overlay indicator for design depth */}
