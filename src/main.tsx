@@ -8,6 +8,7 @@ import './index.css'
 import ExperiencePage from "@pages/Experience.tsx";
 import ProjectsPage from "@pages/Projects.tsx";
 import HomePage from "@pages/Home.tsx";
+import ProjectDetailsPage from "@pages/ProjectDetails.tsx";
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')!).render(
                     <Route path="/contact" element={<ContactPage/>}/>
                     <Route path="/experience" element={<ExperiencePage/>}/>
                     <Route path="/projects" element={<ProjectsPage/>}/>
+                    <Route path="/projects/:key" element={<ProjectDetailsPage/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
