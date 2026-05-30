@@ -44,7 +44,7 @@ const HomePage = () => {
                 {/* Left Side: Info */}
                 <div className="lg:col-span-8 space-y-8 relative">
                     <div
-                        className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#d0bcff]/10 border border-[#d0bcff]/30 text-[#d0bcff] font-mono text-[11px] md:text-[12px] backdrop-blur-md">
+                        className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#d0bcff]/10 border border-[#d0bcff]/30 text-primary font-mono text-[11px] md:text-[12px] backdrop-blur-md">
                         <span
                             className="w-2.5 h-2.5 rounded-full bg-[#4cd7f6] shadow-[0_0_12px_#4cd7f6] mr-3 animate-pulse"/>
                         <span
@@ -88,7 +88,7 @@ const HomePage = () => {
 
                     {/* Simulated Debug Console */}
                     <div
-                        className="hidden sm:block max-w-lg p-3 bg-[#060e20]/80 rounded-lg border border-[#494454]/40 font-mono text-[10px] text-[#4cd7f6]/80 space-y-1">
+                        className="hidden sm:block max-w-lg p-3 bg-[#060e20]/80 rounded-lg border border-[#494454]/40 font-mono text-[10px] text-secondary/80 space-y-1">
                         <div
                             className="flex items-center justify-between text-white/40 border-b border-[#494454]/20 pb-1 mb-2">
                             <span>SYS_MONITOR Logs</span>
@@ -126,7 +126,7 @@ const HomePage = () => {
                         <div
                             className="absolute -bottom-10 -right-4 p-5 glass-card rounded-xl border-[#d0bcff]/30 shadow-2xl max-w-[200px]">
                             <div className="flex items-center gap-2 mb-3">
-                <span className="material-symbols-outlined text-[#4cd7f6] glow-accent text-sm"
+                <span className="material-symbols-outlined text-secondary glow-accent text-sm"
                       style={{fontVariationSettings: "'FILL' 1"}}>
                   <BadgeCheckIcon/>
                 </span>
@@ -145,7 +145,7 @@ const HomePage = () => {
                                 </div>
                                 <div className="flex justify-between font-mono text-[9px] text-[#cbc3d7]">
                                     <span className="uppercase">EFICACIA</span>
-                                    <span className="text-[#4cd7f6] font-extrabold tracking-widest">
+                                    <span className="text-secondary font-extrabold tracking-widest">
                     {optimizerValue}%
                   </span>
                                 </div>
@@ -162,11 +162,11 @@ const HomePage = () => {
                     <div
                         className="md:col-span-5 glass-card p-10 rounded-3xl flex flex-col justify-between group hover:border-[#d0bcff]/50 transition-all duration-300">
             <span
-                className="material-symbols-outlined text-[#d0bcff] text-5xl mb-12 glow-primary group-hover:scale-110 transition-transform">
+                className="material-symbols-outlined text-primary text-5xl mb-12 glow-primary group-hover:scale-110 transition-transform">
               <DraftingCompassIcon/>
             </span>
                         <div>
-                            <h3 className="font-sans text-xl md:text-2xl mb-4 text-[#d0bcff] font-bold">
+                            <h3 className="font-sans text-xl md:text-2xl mb-4 text-primary font-bold">
                                 System Architecture
                             </h3>
                             <p className="text-[#cbc3d7] text-sm md:text-base leading-relaxed">
@@ -182,7 +182,7 @@ const HomePage = () => {
                         <div
                             className="glass-card p-8 rounded-3xl group hover:border-[#4cd7f6]/50 transition-all duration-300 md:translate-y-6">
               <span
-                  className="material-symbols-outlined text-[#4cd7f6] text-4xl mb-6 glow-accent group-hover:rotate-12 transition-transform">
+                  className="material-symbols-outlined text-secondary text-4xl mb-6 glow-accent group-hover:rotate-12 transition-transform">
                 <ZapIcon/>
               </span>
                             <h3 className="font-sans text-lg md:text-xl mb-3 font-semibold text-[#dae2fd]">
@@ -220,7 +220,7 @@ const HomePage = () => {
                     <div className="absolute -left-10 bottom-0 w-20 h-[2px] bg-[#d0bcff] shadow-[0_0_10px_#d0bcff]"/>
                     <div>
                         <h2 className="font-sans text-2xl md:text-3xl font-extrabold flex items-center gap-4 text-[#dae2fd]">
-              <span className="material-symbols-outlined text-[#d0bcff] glow-primary">
+              <span className="material-symbols-outlined text-primary glow-primary">
                 <LayersIcon/>
               </span>
                             Technical Stack
@@ -230,7 +230,7 @@ const HomePage = () => {
                         </p>
                     </div>
                     <div
-                        className="font-mono text-[11px] text-[#d0bcff]/90 bg-[#d0bcff]/10 px-4 py-2 rounded-lg border border-[#d0bcff]/30 backdrop-blur-sm self-start md:self-auto">
+                        className="font-mono text-[11px] text-primary/90 bg-[#d0bcff]/10 px-4 py-2 rounded-lg border border-[#d0bcff]/30 backdrop-blur-sm self-start md:self-auto">
                         CURRENT_VERSION: 2024.Q4-STABLE
                     </div>
                 </div>
@@ -241,7 +241,7 @@ const HomePage = () => {
                     <div
                         className="lg:col-span-5 glass-card p-8 md:p-10 rounded-2xl border-l-[6px] border-[#d0bcff] relative overflow-hidden group">
                         <div
-                            className="absolute top-0 right-0 p-8 opacity-[0.05] text-[#d0bcff] group-hover:opacity-[0.15] transition-opacity duration-300">
+                            className="absolute top-0 right-0 p-8 opacity-[0.05] text-primary group-hover:opacity-[0.15] transition-opacity duration-300">
               <span className="material-symbols-outlined text-[100px] select-none">
                 <LayersIcon/>
               </span>
@@ -249,7 +249,7 @@ const HomePage = () => {
 
                         <div className="flex items-center gap-4 mb-8">
                             <div
-                                className="p-3 rounded-xl bg-[#d0bcff]/15 text-[#d0bcff] shadow-[0_0_20px_rgba(208,188,255,0.3)]">
+                                className="p-3 rounded-xl bg-[#d0bcff]/15 text-primary shadow-[0_0_20px_rgba(208,188,255,0.3)]">
                                 <span className="material-symbols-outlined"><LayersIcon/></span>
                             </div>
                             <h3 className="font-sans text-[#dae2fd] text-lg md:text-xl font-bold tracking-tight">
@@ -275,7 +275,7 @@ const HomePage = () => {
                     <div
                         className="lg:col-span-3 glass-card p-8 md:p-10 rounded-2xl border-t-[6px] border-[#4cd7f6]/40 hover:bg-[#171f33]/30 transition-all duration-300">
                         <div className="flex items-center gap-4 mb-8">
-                            <div className="p-3 rounded-xl bg-[#4cd7f6]/15 text-[#4cd7f6] glow-accent">
+                            <div className="p-3 rounded-xl bg-[#4cd7f6]/15 text-secondary glow-accent">
                                 <span className="material-symbols-outlined"><PaletteIcon/></span>
                             </div>
                             <h3 className="font-sans text-[#dae2fd] text-lg md:text-xl font-bold">
@@ -295,7 +295,7 @@ const HomePage = () => {
                                     className="flex items-start gap-4 group/item cursor-pointer hover:text-white"
                                 >
                   <span
-                      className="material-symbols-outlined text-[#4cd7f6] text-xl glow-accent group-hover/item:scale-125 transition-transform">
+                      className="material-symbols-outlined text-secondary text-xl glow-accent group-hover/item:scale-125 transition-transform">
                     <CircleCheckBigIcon size={16} />
                   </span>
                                     <div>
@@ -341,9 +341,9 @@ const HomePage = () => {
                                     <span className="text-[#cbc3d7]/60">BUILD_QUALITY</span>
                                     <div className="flex items-center gap-1">
                                         <span
-                                            className="text-[#d0bcff] font-extrabold uppercase animate-pulse">OPTIMIZED</span>
+                                            className="text-primary font-extrabold uppercase animate-pulse">OPTIMIZED</span>
                                         <span
-                                            className="material-symbols-outlined text-[10px] text-[#4cd7f6]"><PickaxeIcon size={14} /></span>
+                                            className="material-symbols-outlined text-[10px] text-secondary"><PickaxeIcon size={14} /></span>
                                     </div>
                                 </div>
                                 <div
@@ -368,7 +368,7 @@ const HomePage = () => {
                         className="p-4 bg-[#171f33]/80 border border-[#4cd7f6]/40 rounded-xl flex items-center justify-between font-mono text-xs text-[#dae2fd] animate-slide-in">
                         <div className="flex items-center gap-3">
                             <span
-                                className="material-symbols-outlined text-[#4cd7f6] animate-spin text-sm">settings</span>
+                                className="material-symbols-outlined text-secondary animate-spin text-sm">settings</span>
                             <span>Successfully parsed <strong>{clickedStack}</strong> metrics: Speed check latency: &lt;1.2ms. Stability profile: 100%.</span>
                         </div>
                         <button

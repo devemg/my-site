@@ -223,5 +223,14 @@
   },
   "language": {
     "switch": "Switch language"
+  },
+  "menu": {
+    "home": "Home",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact",
+    "connect_protocol": "Connect",
+    "open": "Open navigation menu",
+    "close": "Close navigation menu"
   }
 }

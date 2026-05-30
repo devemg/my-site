@@ -6,7 +6,7 @@ export const getDevemgContacts = (): ContactItem[] => [
         name: "LinkedIn",
         username: "Emely García",
         link: "https://linkedin.com/in/emely-garciam",
-        textCol: 'text-[#4cd7f6]',
+        textCol: 'text-secondary',
         color: 'hover:bg-[#4cd7f6]/10',
 
     },
@@ -23,7 +23,7 @@ export const getDevemgContacts = (): ContactItem[] => [
         name: "Github",
         username: "devemg",
         link: "https://github.com/devemg",
-        textCol: 'text-[#d0bcff]',
+        textCol: 'text-primary',
         color: 'hover:bg-[#d0bcff]/10',
     },
 ];

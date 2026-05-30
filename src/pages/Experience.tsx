@@ -49,12 +49,12 @@ const ExperiencePage = () => {
             <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-2">
               <div className="flex gap-4 items-center">
                 <div className="w-12 h-12 rounded-lg bg-[#d0bcff]/10 flex items-center justify-center border border-[#d0bcff]/20">
-                  <span className="material-symbols-outlined text-[#d0bcff]">
+                  <span className="material-symbols-outlined text-primary">
                     <Building2Icon />
                   </span>
                 </div>
                 <div>
-                  <p className="font-mono text-[10px] text-[#4cd7f6] uppercase tracking-widest font-extrabold">
+                  <p className="font-mono text-[10px] text-secondary uppercase tracking-widest font-extrabold">
                     Present
                   </p>
                   <h3 className="font-sans text-xl font-bold text-white leading-tight">
@@ -99,7 +99,7 @@ const ExperiencePage = () => {
         <div className="col-span-12 md:col-span-4 glass-card rounded-xl p-8 flex flex-col justify-between border-white/10 hover:border-[#4cd7f6]/40 transition-all duration-300">
           <div>
             <div className="w-10 h-10 rounded-lg bg-[#4cd7f6]/10 flex items-center justify-center mb-5 border border-[#4cd7f6]/20">
-              <span className="material-symbols-outlined text-[#4cd7f6]">
+              <span className="material-symbols-outlined text-secondary">
                 <LayersIcon />
               </span>
             </div>
@@ -124,7 +124,7 @@ const ExperiencePage = () => {
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-[#d0bcff] text-sm">
+                  <span className="material-symbols-outlined text-primary text-sm">
                     {item.icon}
                   </span>
                   <span className="font-mono text-xs font-semibold text-[#dae2fd]">
@@ -151,7 +151,7 @@ const ExperiencePage = () => {
           <div className="space-y-6 relative z-10">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-lg bg-[#4cd7f6]/10 flex items-center justify-center border border-[#4cd7f6]/20">
-                <span className="material-symbols-outlined text-[#4cd7f6]">
+                <span className="material-symbols-outlined text-secondary">
                   <Building2Icon />
                 </span>
               </div>
@@ -173,10 +173,10 @@ const ExperiencePage = () => {
           <div className="mt-8 pt-5 border-t border-[#494454]/30 relative z-10">
             <Link
                 to={ActiveTab.Projects}
-              className="flex justify-between items-center text-[#cbc3d7] hover:text-[#4cd7f6] transition-colors cursor-pointer group/link"
+              className="flex justify-between items-center text-[#cbc3d7] hover:text-secondary transition-colors cursor-pointer group/link"
             >
               <span className="font-mono text-xs font-semibold">12+ Global Clients serviced</span>
-              <span className="material-symbols-outlined text-[#4cd7f6] group-hover/link:translate-x-1 transition-transform">
+              <span className="material-symbols-outlined text-secondary group-hover/link:translate-x-1 transition-transform">
                 <ArrowRightIcon />
               </span>
             </Link>
@@ -205,7 +205,7 @@ const ExperiencePage = () => {
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full bg-[#4cd7f6]/20 flex items-center justify-center">
-                      <span className="material-symbols-outlined text-[#4cd7f6] text-[10px] font-bold">
+                      <span className="material-symbols-outlined text-secondary text-[10px] font-bold">
                         <CheckIcon size={16} />
                       </span>
                     </div>
@@ -238,19 +238,19 @@ const ExperiencePage = () => {
 
         {/* Stats Blocks */}
         <div className="col-span-6 md:col-span-3 glass-card rounded-xl p-6 text-center group hover:border-[#d0bcff]/40 transition-all">
-          <p className="font-mono text-xs text-[#cbc3d7]/60 mb-2 group-hover:text-[#d0bcff] transition-all uppercase tracking-wider">
+          <p className="font-mono text-xs text-[#cbc3d7]/60 mb-2 group-hover:text-primary transition-all uppercase tracking-wider">
             Years of Exp
           </p>
-          <p className="font-display text-4xl font-extrabold text-[#d0bcff] drop-shadow-[0_0_8px_rgba(208,188,255,0.4)]">
+          <p className="font-display text-4xl font-extrabold text-primary drop-shadow-[0_0_8px_rgba(208,188,255,0.4)]">
             08+
           </p>
         </div>
 
         <div className="col-span-6 md:col-span-3 glass-card rounded-xl p-6 text-center group hover:border-[#4cd7f6]/40 transition-all">
-          <p className="font-mono text-xs text-[#cbc3d7]/60 mb-2 group-hover:text-[#4cd7f6] transition-all uppercase tracking-wider">
+          <p className="font-mono text-xs text-[#cbc3d7]/60 mb-2 group-hover:text-secondary transition-all uppercase tracking-wider">
             Projects Completed
           </p>
-          <p className="font-display text-4xl font-extrabold text-[#4cd7f6] drop-shadow-[0_0_8px_rgba(76,215,246,0.4)]">
+          <p className="font-display text-4xl font-extrabold text-secondary drop-shadow-[0_0_8px_rgba(76,215,246,0.4)]">
             42
           </p>
         </div>
@@ -261,7 +261,7 @@ const ExperiencePage = () => {
           
           <div className="flex gap-4 items-center relative z-10 w-full sm:w-auto">
             <div className="w-10 h-10 rounded-full bg-[#d0bcff]/20 flex items-center justify-center shrink-0">
-              <span className="material-symbols-outlined text-[#d0bcff]">
+              <span className="material-symbols-outlined text-primary">
                 <BadgeCheckIcon size={20} />
               </span>
             </div>

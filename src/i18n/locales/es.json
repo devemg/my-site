@@ -124,8 +124,7 @@
         "label": "Stacks",
         "hint": "etiquetas unicas"
       }
-    }
-    ,
+    },
     "descriptions": {
       "random-qa": "RandomAQ es una aplicacion de preguntas y respuestas creada con fines educativos y construida como dos apps conectadas que trabajan juntas.\nEl panel de administracion en Angular permite crear y gestionar categorias, preguntas y respuestas desde una interfaz estructurada. La app movil en Ionic permite elegir una categoria y recibir una pregunta generada aleatoriamente con un temporizador de 30 segundos.\nRandomAQ demuestra pensamiento full-stack, entrega multiplataforma y diseno de interaccion en tiempo real.",
       "fast-messages": "FastMessages es una aplicacion de mensajeria en tiempo real creada con fines educativos usando MEAN stack y Socket.IO.\nLos usuarios pueden crear cuentas, iniciar sesion de forma segura, gestionar su lista de contactos y enviar mensajes instantaneos con actualizaciones en vivo.\nEl proyecto demuestra desarrollo full-stack, manejo de datos en tiempo real y una arquitectura escalable.",
@@ -223,5 +222,14 @@
   },
   "language": {
     "switch": "Cambiar idioma"
+  },
+  "menu": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "experience": "Mi Experiencia",
+    "contact": "Contáctame",
+    "connect_protocol": "Contacto",
+    "open": "Abrir menu de navegacion",
+    "close": "Cerrar menu de navegacion"
   }
 }

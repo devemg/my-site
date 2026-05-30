@@ -1,48 +1,50 @@
-import {useState} from 'react';
+import {useMemo, useState} from 'react';
 import {ActiveTab} from "@models/types.ts";
 import {Link, NavLink} from "react-router";
 import {MenuIcon, TerminalIcon, XIcon} from "lucide-react";
+import {useTranslation} from "react-i18next";
 
 export const TopAppBar = () => {
+    const {i18n, t} = useTranslation();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-    const navItems = [
-        {id: ActiveTab.Home, label: 'Home'},
-        {id: ActiveTab.Projects, label: 'Projects'},
-        {id: ActiveTab.Experience, label: 'Experience'},
-        {id: ActiveTab.Contact, label: 'Contact',},
-    ];
+    const navItems = useMemo(
+        () => [
+            {id: ActiveTab.Home, label: t('menu.home')},
+            {id: ActiveTab.Projects, label: t('menu.projects')},
+            {id: ActiveTab.Experience, label: t('menu.experience')},
+        ],
+        [i18n.language, t],
+    );
 
     return (
-        <nav className="fixed top-0 w-full z-50 bg-[#0b1326]/75 backdrop-blur-2xl border-b border-[#494454]/30">
-            <div className="flex items-center justify-between px-6 md:px-16 h-16 max-w-7xl mx-auto">
-                {/* Logo */}
+        <nav className="fixed top-0 z-50 w-full border-b border-outline-variant/30 bg-[#0b1326]/75 backdrop-blur-2xl">
+            <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:px-16">
                 <Link
                     to={ActiveTab.Home}
-                    className="flex items-center gap-3 cursor-pointer group"
+                    className="group flex cursor-pointer items-center gap-3"
                 >
-          <span
-              className="material-symbols-outlined text-[#d0bcff] glow-primary transition-transform duration-500 group-hover:rotate-45"
-              style={{fontVariationSettings: "'FILL' 1"}}>
-            <TerminalIcon/>
-          </span>
                     <span
-                        className="font-mono text-xs font-bold tracking-[0.2em] text-[#d0bcff] relative overflow-hidden"
+                        className="material-symbols-outlined text-primary glow-primary transition-transform duration-500 group-hover:rotate-45"
+                        style={{fontVariationSettings: "'FILL' 1"}}
                     >
-            Emely García
-          </span>
+                        <TerminalIcon/>
+                    </span>
+                    <span
+                        className="relative overflow-hidden font-mono text-xs font-bold tracking-[0.2em] text-primary">
+                        {t('landing.name')}
+                    </span>
                 </Link>
 
-                {/* Desktop Nav */}
-                <div className="hidden md:flex items-center gap-8">
+                <div className="hidden items-center gap-8 md:flex">
                     {navItems.map((item) => (
                         <NavLink
                             key={item.id}
                             to={item.id}
-                            className={({isActive}) => `text-sm tracking-wider transition-all duration-300 relative py-1 cursor-pointer hover:text-[#4cd7f6] ${
+                            className={({isActive}) => `relative cursor-pointer py-1 text-sm tracking-wider transition-all duration-300 hover:text-secondary ${
                                 isActive
-                                    ? 'text-[#4cd7f6] font-bold border-b-2 border-[#4cd7f6]'
-                                    : 'text-[#cbc3d7] hover:translate-y-[-1px]'
+                                    ? 'border-b-2 border-secondary font-bold text-secondary'
+                                    : 'text-on-surface-variant hover:-translate-y-px'
                             }`}
                         >
                             {item.label}
@@ -50,30 +52,30 @@ export const TopAppBar = () => {
                     ))}
                 </div>
 
-                {/* Controls & Mobile menu button */}
                 <div className="flex items-center gap-4">
-                    {/* Quick Contact Pulse Button */}
                     <Link
                         to={ActiveTab.Contact}
-                        className="hidden sm:flex px-4 py-1.5 glass-card rounded-md text-xs font-mono font-semibold tracking-wider text-[#4cd7f6] border-[#4cd7f6]/40 hover:bg-[#4cd7f6]/10 active:scale-95 transition-all gap-2 items-center"
+                        className="hidden items-center gap-2 rounded-md border-secondary/40 bg-secondary/10 px-4 py-1.5 font-mono text-xs font-semibold tracking-wider text-secondary glass-card transition-all active:scale-95 hover:bg-secondary/10 sm:flex"
                     >
-                        <span className="w-2 h-2 rounded-full bg-[#4cd7f6] animate-ping"/>
-                        HIRE_ME
+                        <span className="h-2 w-2 animate-ping rounded-full bg-secondary"/>
+                        {t('menu.contact')}
                     </Link>
 
                     <button
+                        type="button"
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="text-[#cbc3d7] hover:bg-[#222a3d] transition-all p-2 rounded-lg cursor-pointer hidden"
+                        className="cursor-pointer rounded-lg p-2 text-on-surface-variant transition-all hover:bg-surface-container-high md:hidden"
+                        aria-label={mobileMenuOpen ? t('menu.close') : t('menu.open')}
+                        title={mobileMenuOpen ? t('menu.close') : t('menu.open')}
                     >
                         {mobileMenuOpen ? <XIcon/> : <MenuIcon/>}
                     </button>
                 </div>
             </div>
 
-            {/* Mobile Drawer */}
             {mobileMenuOpen && (
                 <div
-                    className="md:hidden absolute top-16 left-0 w-full bg-[#0b1326] border-b border-[#494454]/40 px-6 py-6 space-y-4 shadow-2xl transition-all">
+                    className="absolute left-0 top-16 w-full space-y-4 border-b border-outline-variant/40 bg-[#0b1326] px-6 py-6 shadow-2xl transition-all md:hidden">
                     <div className="flex flex-col gap-4">
                         {navItems.map((item) => (
                             <NavLink
@@ -82,8 +84,8 @@ export const TopAppBar = () => {
                                 onClick={() => {
                                     setMobileMenuOpen(false);
                                 }}
-                                className={({isActive}) => `text-left text-base py-2 font-display ${
-                                    isActive ? 'text-[#4cd7f6] font-bold' : 'text-[#cbc3d7]'
+                                className={({isActive}) => `text-left font-display text-base py-2 ${
+                                    isActive ? 'font-bold text-secondary' : 'text-on-surface-variant'
                                 }`}
                             >
                                 {item.label}
@@ -94,13 +96,13 @@ export const TopAppBar = () => {
                             onClick={() => {
                                 setMobileMenuOpen(false);
                             }}
-                            className="w-full text-center mt-2 py-3 bg-[#a078ff] text-white font-bold tracking-widest text-xs rounded-lg"
+                            className="mt-2 w-full rounded-lg bg-primary-container py-3 text-center text-xs font-bold tracking-widest text-white"
                         >
-                            CONNECT PROTOCOL
+                            {t('menu.connect_protocol')}
                         </Link>
                     </div>
                 </div>
             )}
         </nav>
     );
-}
+};

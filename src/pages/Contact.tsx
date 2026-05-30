@@ -193,9 +193,9 @@ const ContactPage = () => {
                             <button
                                 type="button"
                                 disabled
-                                className="w-full sm:w-auto px-8 py-4 bg-[#2d3449] text-[#4cd7f6] font-mono text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-3"
+                                className="w-full sm:w-auto px-8 py-4 bg-[#2d3449] text-secondary font-mono text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-3"
                             >
-                                <svg className="animate-spin h-4 w-4 text-[#4cd7f6]" fill="none" viewBox="0 0 24 24">
+                                <svg className="animate-spin h-4 w-4 text-secondary" fill="none" viewBox="0 0 24 24">
                                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
                                             strokeWidth="4"/>
                                     <path className="opacity-75" fill="currentColor"
@@ -234,7 +234,7 @@ const ContactPage = () => {
                                     <div
                                         className="w-3 h-3 rounded-full bg-[#4cd7f6] shadow-[0_0_8px_#4cd7f6] animate-pulse"/>
                                     <span
-                                        className="font-mono text-[10px] text-[#4cd7f6] uppercase tracking-widest font-extrabold">
+                                        className="font-mono text-[10px] text-secondary uppercase tracking-widest font-extrabold">
                     {t('contact.availability.status')}
                   </span>
                                 </div>
