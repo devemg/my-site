@@ -1,4 +1,4 @@
-import {ProjectItem, ProjectsSection} from "@models/project-item";
+import {ProjectItem} from "@models/project-item";
 import i18n from "../i18n/config";
 
 const getProjectDescription = (projectId: string, fallbackDescription: string): string => {
@@ -540,26 +540,5 @@ export const getDevemgProjects = (): ProjectItem[] => [
         ]
     }
 ];
-
-export const getProjectSection = (): ProjectsSection => ({
-    bottom: {
-        leftCard: {
-            title: "Building systems that stay maintainable.",
-            subtitle: "ENGINEERING APPROACH",
-            description: `Every project is designed with scalability, readability, and long-term ownership in mind. Beyond shipping features, 
-      I focus on architecture decisions, performance, and developer experience to ensure software remains reliable as requirements evolve.`,
-        },
-        rightCard: {
-            title: "Interested in working together?",
-            subtitle: "NEXT STEP",
-            description: `Whether you're building a product from scratch, improving an existing platform, or exploring new technical ideas, 
-      I'm always open to discuss new challenges.`,
-            action: {
-                buttonText: "Contact",
-                href: "/contact",
-            },
-        }
-    }
-});
 
 export const devemgProjects = getDevemgProjects();

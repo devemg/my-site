@@ -139,7 +139,7 @@ const HomePage = () => {
                             <div className="space-y-2">
                                 <div className="h-1.5 w-full bg-[#222a3d] rounded-full overflow-hidden">
                                     <div
-                                        className="h-full bg-gradient-to-r from-[#d0bcff] to-[#4cd7f6] transition-all duration-500 shadow-[0_0_8px_#4cd7f6]"
+                                        className="h-full bg-linear-to-r from-[#d0bcff] to-[#4cd7f6] transition-all duration-500 shadow-[0_0_8px_#4cd7f6]"
                                         style={{width: `${optimizerValue}%`}}
                                     />
                                 </div>
@@ -352,7 +352,7 @@ const HomePage = () => {
                                     title="Click to perform active infrastructure optimization"
                                 >
                                     <div
-                                        className="h-full bg-gradient-to-r from-[#d0bcff] via-[#4cd7f6] to-[#ffafd3] w-full"/>
+                                        className="h-full bg-linear-to-r from-[#d0bcff] via-[#4cd7f6] to-[#ffafd3] w-full"/>
                                 </div>
                                 <div className="text-[9px] font-mono text-[#cbc3d7]/50 text-right">
                                     Interactive calibration line. Click to optimize.

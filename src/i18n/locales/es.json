@@ -67,13 +67,96 @@
     "title": "Mis Proyectos",
     "sourceCode": "Código Fuente",
     "liveDemo": "Demo en Vivo",
-    "takeLook": "¡Echa un vistazo!"
+    "takeLook": "Echa un vistazo!",
+    "page": {
+      "hero": {
+        "title1": "Donde las ideas se convierten en software, productos",
+        "title2": "y experiencias.",
+        "description": "Un indice curado de aplicaciones, plataformas y experimentos construidos con arquitectura deliberada, implementacion limpia y mejora continua."
+      },
+      "actions": {
+        "startProject": "Iniciar proyecto",
+        "viewSource": "Ver codigo"
+      },
+      "sections": {
+        "matrixLabel": "matriz de proyectos",
+        "highlights": "Destacados",
+        "engineering": {
+          "subtitle": "ENFOQUE DE INGENIERIA",
+          "title": "Construyendo sistemas que se mantengan faciles de mantener.",
+          "description": "Cada proyecto se diseña pensando en escalabilidad, legibilidad y propiedad a largo plazo. Mas alla de entregar funciones, me enfoco en decisiones de arquitectura, rendimiento y experiencia de desarrollo para asegurar que el software siga siendo confiable cuando evolucionen los requisitos."
+        },
+        "cta": {
+          "subtitle": "SIGUIENTE PASO",
+          "title": "Interesado en trabajar juntos?",
+          "description": "Ya sea que estes construyendo un producto desde cero, mejorando una plataforma existente o explorando nuevas ideas tecnicas, siempre estoy abierta a conversar sobre nuevos retos.",
+          "button": "Contacto"
+        }
+      }
+    },
+    "cards": {
+      "featured": "destacado",
+      "stack": "stack",
+      "featuredDescription": "El espacio destacado esta reservado para la pieza mas fuerte del portafolio: comercio, pulido visual e interacciones de nivel producto.",
+      "inspect": "inspeccionar",
+      "demo": "demo",
+      "source": "codigo",
+      "details": "detalles",
+      "demoBadge": "demo",
+      "repoBadge": "repo",
+      "shots": "capturas"
+    },
+    "stats": {
+      "title": "resumen del sistema",
+      "projects": {
+        "label": "Proyectos",
+        "hint": "entradas del portafolio"
+      },
+      "demos": {
+        "label": "Demos",
+        "hint": "despliegues en vivo"
+      },
+      "repositories": {
+        "label": "Repositorios",
+        "hint": "archivos de codigo"
+      },
+      "stacks": {
+        "label": "Stacks",
+        "hint": "etiquetas unicas"
+      }
+    }
   },
   "contact": {
-    "title": "¿Interesado en colaborar conmigo?",
-    "subtitle1": "Siempre estoy abierta a discutir proyectos u oportunidades de colaboración.",
-    "subtitle2": "Puedes contactarme a través de mis redes sociales.",
-    "message": "¡Estaré feliz de responder!",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo",
+      "message": "Mensaje",
+      "namePlaceholder": "Juan Pérez",
+      "emailPlaceholder": "correo@ejemplo.com",
+      "messagePlaceholder": "Cuéntame sobre tu idea...",
+      "submit": "Enviar",
+      "dispatching": "Enviando...",
+      "sent": "Enviado"
+    },
+    "social": {
+      "title": "Mis redes ",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Correo"
+    },
+    "availability": {
+      "status": "Disponible",
+      "title": "",
+      "description": "Con base en Ciudad de Guatemala, Guatemala. Abierta a oportunidades remotas en todo el mundo.",
+      "projects": "Proyectos activos: 1"
+    },
+    "errors": {
+      "nameMin": "El nombre debe tener al menos 2 caracteres.",
+      "nameMax": "El nombre debe tener 60 caracteres o menos.",
+      "emailInvalid": "Ingresa un correo válido.",
+      "messageMin": "El mensaje debe tener al menos 10 caracteres.",
+      "messageMax": "El mensaje debe tener 1000 caracteres o menos."
+    },
     "copyright": "devemg 2025 (v3.0.0)"
   },
   "language": {

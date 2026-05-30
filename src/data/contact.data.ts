@@ -1,42 +1,30 @@
-import {
-    faGithub,
-    faGoogle,
-    faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
-import { ContactItem } from "@models/contact-item";
+import {ContactItem} from "@models/contact-item";
 
-export const devemgContacts: ContactItem[] = [
+export const getDevemgContacts = (): ContactItem[] => [
     {
-      id: 1,
-      name: "LinkedIn",
-      username: "Emely García",
-      iconClass: "linkedin",
-      icon: faLinkedin,
-      link: "https://linkedin.com/in/emely-garciam",
+        id: 'linkedin',
+        name: "LinkedIn",
+        username: "Emely García",
+        link: "https://linkedin.com/in/emely-garciam",
+        textCol: 'text-[#4cd7f6]',
+        color: 'hover:bg-[#4cd7f6]/10',
+
     },
     {
-      id: 2,
-      name: "Email",
-      username: "garciam.emm@gmail.com",
-      iconClass: "google",
-      icon: faGoogle,
-      link: "mailto:garciam.emm@gmail.com?Subject=Hi Emely!",
+        id: 'gmail',
+        name: "Email",
+        username: "garciam.emm@gmail.com",
+        link: "mailto:garciam.emm@gmail.com?Subject=Hi Emely!",
+        textCol: 'text-[#ffafd3]',
+        color: 'hover:bg-[#ffafd3]/10',
     },
     {
-      id: 3,
-      name: "Github",
-      username: "devemg",
-      iconClass: "github",
-      icon: faGithub,
-      link: "https://github.com/devemg",
+        id: 'github',
+        name: "Github",
+        username: "devemg",
+        link: "https://github.com/devemg",
+        textCol: 'text-[#d0bcff]',
+        color: 'hover:bg-[#d0bcff]/10',
     },
-    // {
-    //   id: 4,
-    //   name: "Gitlab",
-    //   username: "devemg",
-    //   iconClass: "gitlab",
-    //   icon: faGitlab,
-    //   link: "https://gitlab.com/devemg",
-    // },
-  ];
+];
   

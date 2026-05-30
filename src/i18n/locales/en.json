@@ -67,13 +67,96 @@
     "title": "My Projects",
     "sourceCode": "Source Code",
     "liveDemo": "Live Demo",
-    "takeLook": "Take a look!"
+    "takeLook": "Take a look!",
+    "page": {
+      "hero": {
+        "title1": "Where ideas become software, products",
+        "title2": "and experiences.",
+        "description": "A curated index of applications, platforms, and experiments built through deliberate architecture, clean implementation, and continuous iteration."
+      },
+      "actions": {
+        "startProject": "Start a project",
+        "viewSource": "View source"
+      },
+      "sections": {
+        "matrixLabel": "project matrix",
+        "highlights": "Highlights",
+        "engineering": {
+          "subtitle": "ENGINEERING APPROACH",
+          "title": "Building systems that stay maintainable.",
+          "description": "Every project is designed with scalability, readability, and long-term ownership in mind. Beyond shipping features, I focus on architecture decisions, performance, and developer experience to ensure software remains reliable as requirements evolve."
+        },
+        "cta": {
+          "subtitle": "NEXT STEP",
+          "title": "Interested in working together?",
+          "description": "Whether you're building a product from scratch, improving an existing platform, or exploring new technical ideas, I'm always open to discuss new challenges.",
+          "button": "Contact"
+        }
+      }
+    },
+    "cards": {
+      "featured": "featured",
+      "stack": "stack",
+      "featuredDescription": "The featured slot is tuned for the strongest portfolio entry: commerce, visual polish, and product-grade interaction density.",
+      "inspect": "inspect",
+      "demo": "demo",
+      "source": "source",
+      "details": "details",
+      "demoBadge": "demo",
+      "repoBadge": "repo",
+      "shots": "shots"
+    },
+    "stats": {
+      "title": "system overview",
+      "projects": {
+        "label": "Projects",
+        "hint": "portfolio entries"
+      },
+      "demos": {
+        "label": "Demos",
+        "hint": "live deployments"
+      },
+      "repositories": {
+        "label": "Repositories",
+        "hint": "source archives"
+      },
+      "stacks": {
+        "label": "Stacks",
+        "hint": "unique tags"
+      }
+    }
   },
   "contact": {
-    "title": "Interested in collaborating with me?",
-    "subtitle1": "I am always open to discuss projects or collaboration opportunities.",
-    "subtitle2": "You can contact me through my social networks.",
-    "message": "I will be happy to answer!",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "namePlaceholder": "John Doe",
+      "emailPlaceholder": "john@example.com",
+      "messagePlaceholder": "Tell me about your vision...",
+      "submit": "Dispatch Message",
+      "dispatching": "Dispatching Protocol...",
+      "sent": "Sent Successfully"
+    },
+    "social": {
+      "title": "Let's connect!",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    },
+    "availability": {
+      "status": "Available for hire",
+      "title": "Technical Consulting",
+      "description": "Based in Guatemala City, Guatemala. Open to remote opportunities worldwide.",
+      "projects": "Active Projects: 3"
+    },
+    "errors": {
+      "nameMin": "Name must be at least 2 characters long.",
+      "nameMax": "Name must be 60 characters or fewer.",
+      "emailInvalid": "Enter a valid email address.",
+      "messageMin": "Message must be at least 10 characters long.",
+      "messageMax": "Message must be 1000 characters or fewer."
+    },
     "copyright": "devemg 2025 (v3.0.0)"
   },
   "language": {

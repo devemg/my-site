@@ -1,10 +1,17 @@
-import {ActiveTab} from "@models/types.ts";
-import {Link} from "react-router";
 import {TerminalIcon} from "lucide-react";
+import {getDevemgContacts} from "@data/contact.data.ts";
+import {useMemo} from "react";
 
 
 export const FooterView = () => {
     const currentYear = new Date().getFullYear();
+    const contacts = getDevemgContacts();
+
+    const github = useMemo(() => contacts.find(c => c.id.toLowerCase() === "github"), [contacts]);
+
+    const linkedin = useMemo(() => contacts.find(c => c.id.toLowerCase() === "linkedin"), [contacts]);
+
+    const resume = useMemo(() => contacts.find(c => c.id.toLowerCase() === "resume"), [contacts]);
 
     return (
         <footer className="w-full py-16 bg-[#060e20]/90 backdrop-blur-xl border-t border-[#494454]/30 relative z-20">
@@ -27,8 +34,8 @@ export const FooterView = () => {
 
                 {/* Links Column */}
                 <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
-                    <a
-                        href="https://github.com"
+                    {github && (<a
+                        href={github.link}
                         target="_blank"
                         key="github"
                         rel="noopener noreferrer"
@@ -36,9 +43,9 @@ export const FooterView = () => {
                     >
                         <span className="w-0 group-hover:w-3 h-[1px] bg-[#d0bcff] transition-all duration-300"/>
                         GITHUB
-                    </a>
-                    <a
-                        href="https://linkedin.com"
+                    </a>)}
+                    {linkedin && (<a
+                        href={linkedin.link}
                         target="_blank"
                         key="linkedin"
                         rel="noopener noreferrer"
@@ -46,15 +53,15 @@ export const FooterView = () => {
                     >
                         <span className="w-0 group-hover:w-3 h-[1px] bg-[#d0bcff] transition-all duration-300"/>
                         LINKEDIN
-                    </a>
-                    <Link
-                        to={ActiveTab.Experience}
-                        type="button"
+                    </a>)}
+                    {resume && (<a
+                        href={resume.link}
+                        target="_blank"
                         className="group text-[11px] font-mono text-[#cbc3d7] hover:text-[#d0bcff] transition-all tracking-[0.25em] flex items-center gap-2 font-bold cursor-pointer"
                     >
                         <span className="w-0 group-hover:w-3 h-[1px] bg-[#d0bcff] transition-all duration-300"/>
                         RESUME.PDF
-                    </Link>
+                    </a>)}
                 </div>
             </div>
         </footer>

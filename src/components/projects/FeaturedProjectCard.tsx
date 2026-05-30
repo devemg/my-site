@@ -1,5 +1,6 @@
 import {Link} from 'react-router';
 import {ExternalLinkIcon, EyeIcon, PlayIcon} from 'lucide-react';
+import {useTranslation} from 'react-i18next';
 import {ActiveTab} from '@models/types';
 import {ProjectItem} from '@models/project-item';
 
@@ -10,12 +11,16 @@ interface FeaturedProjectCardProps {
 }
 
 const FeaturedProjectCard = ({project, tags, summary}: FeaturedProjectCardProps) => {
+    const {t} = useTranslation();
+
     return (
         <div
             className="xl:col-span-8 rounded-xl border border-slate-700 bg-slate-900/70 backdrop-blur-xl overflow-hidden">
             <div className="flex items-center justify-between border-b border-slate-800 px-5 py-4">
                 <div>
-                    <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-slate-400">featured</p>
+                    <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-slate-400">
+                        {t('projects.cards.featured')}
+                    </p>
                 </div>
             </div>
 
@@ -75,7 +80,7 @@ const FeaturedProjectCard = ({project, tags, summary}: FeaturedProjectCardProps)
                         <div className="grid gap-3">
                             <div className="rounded-lg border border-slate-800 bg-slate-950/60 p-4">
                                 <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-slate-400">
-                                    stack
+                                    {t('projects.cards.stack')}
                                 </p>
                                 <p className="mt-2 text-sm text-slate-200">
                                     {tags.join(' / ')}
@@ -84,8 +89,7 @@ const FeaturedProjectCard = ({project, tags, summary}: FeaturedProjectCardProps)
                         </div>
 
                         <p className="text-sm leading-6 text-slate-300">
-                            The featured slot is tuned for the strongest portfolio entry: commerce, visual polish,
-                            and product-grade interaction density.
+                            {t('projects.cards.featuredDescription')}
                         </p>
                     </div>
 
@@ -95,7 +99,7 @@ const FeaturedProjectCard = ({project, tags, summary}: FeaturedProjectCardProps)
                             className="inline-flex items-center gap-2 rounded-md border border-slate-700 bg-slate-950/80 px-4 py-3 font-mono text-xs font-bold uppercase tracking-[0.22em] text-slate-100 transition-colors hover:border-cyan-400/60 hover:text-cyan-200"
                         >
                             <EyeIcon size={16}/>
-                            inspect
+                            {t('projects.cards.inspect')}
                         </Link>
                         {project.demoUrl && (
                             <a
@@ -105,7 +109,7 @@ const FeaturedProjectCard = ({project, tags, summary}: FeaturedProjectCardProps)
                                 className="inline-flex items-center gap-2 rounded-md bg-cyan-400 px-4 py-3 font-mono text-xs font-bold uppercase tracking-[0.22em] text-slate-950 transition-all hover:brightness-110"
                             >
                                 <PlayIcon size={16}/>
-                                demo
+                                {t('projects.cards.demo')}
                             </a>
                         )}
                         {project.codeUrl && (
@@ -116,7 +120,7 @@ const FeaturedProjectCard = ({project, tags, summary}: FeaturedProjectCardProps)
                                 className="inline-flex items-center gap-2 rounded-md border border-violet-400/60 px-4 py-3 font-mono text-xs font-bold uppercase tracking-[0.22em] text-violet-200 transition-colors hover:bg-violet-500/10"
                             >
                                 <ExternalLinkIcon size={16}/>
-                                source
+                                {t('projects.cards.source')}
                             </a>
                         )}
                     </div>

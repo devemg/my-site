@@ -1,6 +1,7 @@
 import {Layers3Icon} from 'lucide-react';
 import {ProjectItem} from "@models/project-item.ts";
 import {useMemo} from "react";
+import {useTranslation} from "react-i18next";
 
 interface StatsCardProps {
     projects: ProjectItem[];
@@ -24,33 +25,34 @@ const projectTags: Record<string, string[]> = {
 const getProjectTags = (project: ProjectItem) => projectTags[project.id] ?? ['System'];
 
 const StatsCard = ({ projects = [] }: StatsCardProps) => {
+    const {t} = useTranslation();
 
     const stats = useMemo(()=>[
-        {label: 'Projects', value: projects.length.toString().padStart(2, '0'), hint: 'portfolio entries'},
+        {label: t('projects.stats.projects.label'), value: projects.length.toString().padStart(2, '0'), hint: t('projects.stats.projects.hint')},
         {
-            label: 'Demos',
+            label: t('projects.stats.demos.label'),
             value: projects.filter((project) => Boolean(project.demoUrl)).length.toString().padStart(2, '0'),
-            hint: 'live deployments'
+            hint: t('projects.stats.demos.hint')
         },
         {
-            label: 'Repositories',
+            label: t('projects.stats.repositories.label'),
             value: projects.filter((project) => Boolean(project.codeUrl)).length.toString().padStart(2, '0'),
-            hint: 'source archives'
+            hint: t('projects.stats.repositories.hint')
         },
         {
-            label: 'Stacks',
+            label: t('projects.stats.stacks.label'),
             value: new Set(projects.flatMap((project) => getProjectTags(project))).size.toString().padStart(2, '0'),
-            hint: 'unique tags'
+            hint: t('projects.stats.stacks.hint')
         },
-    ], [projects]);
+    ], [projects, t]);
 
 
     return (
-        <aside className="xl:col-span-4 rounded-xl border border-slate-700 bg-slate-950/70 p-5 backdrop-blur-xl">
+        <aside className="xl:col-span-4 rounded-xl border border-slate-700 bg-slate-950/70 p-5 backdrop-blur-xl h-fit self-start">
             <div className="mb-5 flex items-center justify-between border-b border-slate-800 pb-4">
                 <div>
                     <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-slate-400">
-                        system overview
+                        {t('projects.stats.title')}
                     </p>
                 </div>
                 <Layers3Icon className="text-cyan-300" size={20}/>

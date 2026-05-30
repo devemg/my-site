@@ -1,5 +1,6 @@
 import {Link} from 'react-router';
 import {EyeIcon, PlayIcon} from 'lucide-react';
+import {useTranslation} from 'react-i18next';
 import {ProjectItem} from '@models/project-item';
 import {ActiveTab} from '@models/types';
 
@@ -10,6 +11,8 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({project, tags, summary}: ProjectCardProps) => {
+    const {t} = useTranslation();
+
     return (
         <article
             className="group overflow-hidden rounded-xl border border-slate-700 bg-slate-950/70 backdrop-blur-xl transition-transform hover:-translate-y-1"
@@ -66,31 +69,31 @@ const ProjectCard = ({project, tags, summary}: ProjectCardProps) => {
                     {project.demoUrl && (
                         <span
                             className="rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-200">
-                            demo
+                            {t('projects.cards.demoBadge')}
                         </span>
                     )}
                     {project.codeUrl && (
                         <span
                             className="rounded-full border border-violet-400/25 bg-violet-400/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-violet-200">
-                            repo
+                            {t('projects.cards.repoBadge')}
                         </span>
                     )}
                     {project.images?.length ? (
                         <span
                             className="rounded-full border border-slate-700 bg-slate-900 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-slate-300">
-                            {project.images.length.toString().padStart(2, '0')} shots
+                            {project.images.length.toString().padStart(2, '0')} {t('projects.cards.shots')}
                         </span>
                     ) : null}
                 </div>
 
                 <div className="flex flex-wrap gap-2 border-t border-slate-800 pt-4">
                     <Link
-                        to={`${ActiveTab.Projects}/${project.id}`}
-                        className="inline-flex flex-1 items-center justify-center gap-2 rounded-md border border-slate-700 bg-slate-900/80 px-3 py-2.5 font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-slate-100 transition-colors hover:border-cyan-400/50 hover:text-cyan-200"
-                    >
-                        <EyeIcon size={15}/>
-                        details
-                    </Link>
+                    to={`${ActiveTab.Projects}/${project.id}`}
+                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-md border border-slate-700 bg-slate-900/80 px-3 py-2.5 font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-slate-100 transition-colors hover:border-cyan-400/50 hover:text-cyan-200"
+                >
+                    <EyeIcon size={15}/>
+                    {t('projects.cards.details')}
+                </Link>
                     {project.demoUrl && (
                         <a
                             href={project.demoUrl}
@@ -99,7 +102,7 @@ const ProjectCard = ({project, tags, summary}: ProjectCardProps) => {
                             className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-cyan-400 px-3 py-2.5 font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-slate-950 transition-all hover:brightness-110"
                         >
                             <PlayIcon size={15}/>
-                            demo
+                            {t('projects.cards.demo')}
                         </a>
                     )}
                 </div>
