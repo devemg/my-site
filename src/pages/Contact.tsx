@@ -38,7 +38,7 @@ const ContactPage = () => {
     const {t, i18n} = useTranslation();
     const contacts = getDevemgContacts();
     const [submittingState, setSubmittingState] = useState<'idle' | 'dispatching' | 'sent'>('idle');
-    const previousLanguageRef = useRef(i18n.language);
+    const previousLanguageRef = useRef(i18n.resolvedLanguage);
     const {
         register,
         handleSubmit,
@@ -67,14 +67,14 @@ const ContactPage = () => {
     }, [reset, submittingState]);
 
     useEffect(() => {
-        const currentLanguage = i18n.language;
+        const currentLanguage = i18n.resolvedLanguage;
         const languageChanged = previousLanguageRef.current !== currentLanguage;
 
         previousLanguageRef.current = currentLanguage;
         if (languageChanged && Object.keys(errors).length > 0) {
             void trigger();
         }
-    }, [errors, i18n.language, trigger]);
+    }, [errors, i18n.resolvedLanguage, trigger]);
 
     const onSubmit = async (data: ContactFormValues) => {
         setSubmittingState('dispatching');
@@ -91,7 +91,7 @@ const ContactPage = () => {
         <section className="space-y-16">
             {/* Language Header */}
             {
-                i18n.language === 'en' ? (<HeaderEnglish/>) : (<HeaderSpanish/>)
+                i18n.resolvedLanguage === 'en' ? (<HeaderEnglish/>) : (<HeaderSpanish/>)
             }
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
                 {/* Contact Form Card (7 Columns) */}

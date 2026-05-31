@@ -231,5 +231,27 @@
     "connect_protocol": "Contacto",
     "open": "Abrir menu de navegacion",
     "close": "Cerrar menu de navegacion"
+  },
+  "experiencePage": {
+    "hero": {
+      "label": "Experiencia Profesional",
+      "title": "Construyendo interfaces de usuario con",
+      "titleAccent": "claridad, rendimiento y disciplina.",
+      "description": "Desarrolladora Front-End apasionada y orientada a resultados con más de 5 años de experiencia diseñando, desarrollando y manteniendo aplicaciones web escalables y de alto rendimiento. Enfocada en el trabajo de UI limpio, la colaboración sólida y la mantenibilidad a largo plazo."
+    },
+    "stats": {
+      "currentRole": "Rol actual",
+      "currentRoleDesc": "continúa el capítulo actual de entrega de frontend práctico y trabajo de UI centrado en el rendimiento.",
+      "years": "Años",
+      "roles": "Roles",
+      "base": "Base",
+      "location": "Ciudad de Guatemala"
+    },
+    "timeline": {
+      "title": "Cronología",
+      "description": "Un historial compacto de roles, responsabilidades y patrones de entrega extraídos de los datos disponibles del portafolio.",
+      "entries": "entradas",
+      "currentBadge": "Rol actual"
+    }
   }
 }

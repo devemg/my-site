@@ -49,7 +49,7 @@ const getDetailText = (project: ProjectItem) => {
 const ProjectDetailsPage = () => {
     const {t, i18n} = useTranslation();
     const {key} = useParams();
-    const projects = useMemo(() => getDevemgProjects(), [i18n.language]);
+    const projects = useMemo(() => getDevemgProjects(), [i18n.resolvedLanguage]);
     const resolvedProject = useMemo(
         () => projects.find((item) => item.id === key),
         [key, projects],

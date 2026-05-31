@@ -124,8 +124,7 @@
         "label": "Stacks",
         "hint": "unique tags"
       }
-    }
-    ,
+    },
     "descriptions": {
       "random-qa": "RandomAQ is a question-and-answer application developed for educational purposes and built as two connected apps working together.\nThe Angular admin panel lets administrators create and manage categories, questions, and answers through a structured interface. The Ionic mobile app lets users pick a category and receive a randomly generated question with a 30-second timer.\nRandomAQ shows full-stack thinking, cross-platform delivery, and real-time interaction design.",
       "fast-messages": "FastMessages is a real-time messaging application developed for educational purposes with the MEAN stack and Socket.IO.\nUsers can create accounts, log in securely, manage contact lists, and exchange instant messages with live updates.\nThe project demonstrates full-stack development, real-time data handling, and scalable application architecture.",
@@ -228,9 +227,31 @@
     "home": "Home",
     "projects": "Projects",
     "experience": "Experience",
-    "contact": "Contact",
+    "contact": "Ping Me",
     "connect_protocol": "Connect",
     "open": "Open navigation menu",
     "close": "Close navigation menu"
+  },
+  "experiencePage": {
+    "hero": {
+      "label": "Professional Experience",
+      "title": "Building user interfaces with",
+      "titleAccent": "clarity, performance, and discipline.",
+      "description": "Passionate and results-driven Front-End Developer with over 5 years of experience designing, developing, and maintaining scalable, high-performance web applications. Focused on clean UI work, strong collaboration, and long-term maintainability."
+    },
+    "stats": {
+      "currentRole": "Current role",
+      "currentRoleDesc": "continues the current chapter of hands-on frontend delivery and performance-focused UI work.",
+      "years": "Years",
+      "roles": "Roles",
+      "base": "Base",
+      "location": "Guatemala City"
+    },
+    "timeline": {
+      "title": "Timeline",
+      "description": "A compact history of roles, responsibilities, and delivery patterns pulled from the available portfolio data.",
+      "entries": "entries",
+      "currentBadge": "Current role"
+    }
   }
 }

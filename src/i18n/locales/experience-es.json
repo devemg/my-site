@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "role": "Desarrollador React",
+      "company": "Elaniin",
+      "location": "Ciudad de Guatemala - Remoto",
+      "interval": "Julio 2025 - Presente",
+      "description": "Entrega de interfaces de alto rendimiento para una aplicación web de alta demanda y complejidad, traduciendo especificaciones de Figma en componentes de React escalables utilizando JavaScript, TypeScript, HTML y CSS.",
+      "highlights": [
+        "Construcción de patrones de UI reutilizables y componentes listos para sistemas de diseño.",
+        "Integración de APIs y apoyo en esfuerzos de optimización de rendimiento.",
+        "Trabajo en ceremonias ágiles con diseñadores, gerentes de producto e ingenieros."
+      ],
+      "isCurrent": true
+    },
+    {
+      "id": 2,
+      "role": "Desarrollador Frontend Senior",
+      "company": "Wotdev",
+      "location": "Ciudad de Guatemala - Híbrido",
+      "interval": "Julio 2021 - Marzo 2025",
+      "description": "Desarrollo de experiencias de streaming fluidas para plataformas web y SmartTV, mejorando la escalabilidad y la experiencia del usuario en productos OTT.",
+      "highlights": [
+        "Traducción de especificaciones de UI basadas en Figma en componentes receptivos de React y Angular.",
+        "Construcción y mantenimiento de SDKs para integraciones en múltiples plataformas de clientes.",
+        "Contribución a la optimización del rendimiento, mantenimiento de la plataforma y mejores prácticas de seguridad."
+      ],
+      "secondaryRoles": [
+        "Desarrollador Senior de Dispositivos Smart TV Basados en Navegador",
+        "Líder Técnico Frontend"
+      ]
+    },
+    {
+      "id": 3,
+      "role": "Desarrollador Angular",
+      "company": "YaVoy",
+      "location": "Ciudad de Guatemala - Remoto",
+      "interval": "Febrero 2021 - Junio 2021",
+      "description": "Creación de diseños de UI dinámicos y centrados en el negocio con un fuerte énfasis en la usabilidad, capacidad de respuesta y código mantenible.",
+      "highlights": [
+        "Simplificación de flujos de navegación para mejorar el compromiso del usuario y la eficiencia de la plataforma.",
+        "Entrega de código de UI reutilizable alineado con prácticas ágiles y de entrega continua."
+      ]
+    },
+    {
+      "id": 4,
+      "role": "Desarrollador Web",
+      "company": "Ideas4Software",
+      "location": "Ciudad de Guatemala - Remoto",
+      "interval": "Julio 2020 - Febrero 2021",
+      "description": "Liderazgo en el diseño y desarrollo de un sistema POS para pequeñas y medianas empresas, contribuyendo al trabajo móvil híbrido y multiplataforma.",
+      "highlights": [
+        "Construcción de la funcionalidad principal de POS para flujos de trabajo de pequeñas y medianas empresas.",
+        "Contribución a características de aplicaciones móviles híbridas e integración de plataformas.",
+        "Agilización de la entrega utilizando plantillas y flujos de trabajo ágiles establecidos."
+      ]
+    }
+  ]
+}

@@ -14,7 +14,7 @@ export const TopAppBar = () => {
             {id: ActiveTab.Projects, label: t('menu.projects')},
             {id: ActiveTab.Experience, label: t('menu.experience')},
         ],
-        [i18n.language, t],
+        [i18n.resolvedLanguage, t],
     );
 
     return (
