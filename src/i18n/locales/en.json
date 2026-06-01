@@ -1,9 +1,4 @@
-{
-  "landing": {
-    "name": "Emely García",
-    "role": "Frontend Developer",
-    "phrase": "Designing, developing, and maintaining scalable, high-performance web applications."
-  },
+﻿{
   "experience": {
     "title": "My Experience",
     "description": "Hey, I'm a Front-End Developer with almost 5 years of experience.\nI love building fast, scalable web apps that look and feel great.\nI'm comfortable working with React, Angular, and modern web tools.\nI've worked with Agile teams from different parts of the world, such as India, the United States, and Canada.\nClean code, testing, and performance are super important to me.",
@@ -224,6 +219,7 @@
     "switch": "Switch language"
   },
   "menu": {
+    "name": "Emely García",
     "home": "Home",
     "projects": "Projects",
     "experience": "Experience",
@@ -252,6 +248,99 @@
       "description": "A compact history of roles, responsibilities, and delivery patterns pulled from the available portfolio data.",
       "entries": "entries",
       "currentBadge": "Current role"
+    }
+  },
+  "home": {
+    "hero": {
+      "description": "Passionate Front-End Developer with over 5 years of experience building scalable, high-performance web applications. Expertise in React, Angular, and TypeScript.",
+      "titleAccent": "Frontend Developer",
+      "contactProtocol": "CONTACT_PROTOCOL",
+      "viewProjects": "VIEW PROJECTS",
+      "status": "SYSTEM_STATUS: ONLINE",
+      "pre-title": "Senior ",
+      "title": "crafting high-impact web solutions."
+    },
+    "stack": {
+      "title": "Technical Stack",
+      "description": "A robust foundation built on years of experience with modern frontend technologies.",
+      "version": "CURRENT_VERSION: 2026.Q2-STABLE"
+    },
+    "expertise": {
+      "system_architecture": "System Architecture",
+      "system_architecture_desc": "Designing modular, scalable frontend ecosystems with clean, testable code and Agile methodologies.",
+      "performance_core": "Performance Core",
+      "performance_core_desc": "Optimization of web applications for high-demand environments and content delivery.",
+      "visual_fidelity": "Visual Fidelity",
+      "visual_fidelity_desc": "Precise UI implementation from Figma specifications with focus on accessibility and responsiveness."
+    },
+    "core": {
+      "title": "Core Infrastructure",
+      "tools": [
+        "React",
+        "Angular",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "Flutter",
+        "Express"
+      ]
+    },
+    "style_and_design": {
+      "title": "Styling & Design",
+      "tools": [
+        {
+          "name": "HTML & CSS",
+          "desc": "Semantic and performant layouts"
+        },
+        {
+          "name": "Tailwind CSS",
+          "desc": "Atomic design systems"
+        },
+        {
+          "name": "Responsive Design",
+          "desc": "Cross-device compatibility"
+        },
+        {
+          "name": "Accessibility",
+          "desc": "Inclusive web standards"
+        }
+      ]
+    },
+    "tools_and_test": {
+      "title": "Toolchain & Testing",
+      "tools": [
+        "GIT",
+        "GITHUB",
+        "VITE",
+        "NPM",
+        "JEST",
+        "STORYBOOK",
+        "JIRA",
+        "FIREBASE"
+      ]
+    },
+    "cloud_data_section": {
+      "title": "Cloud & Data",
+      "tools": [
+        "AWS",
+        "Google Cloud",
+        "Firebase",
+        "supabase",
+        "render",
+        "Digital Ocean",
+        "MySQL",
+        "MongoDB",
+        "postgreSQL"
+      ]
+    },
+    "ai_section": {
+      "title": "AI Intelligence",
+      "tag": "CO_ENGINEERING_ACTIVE",
+      "tools": [
+        "Cursor",
+        "Codex",
+        "Copilot"
+      ]
     }
   }
 }

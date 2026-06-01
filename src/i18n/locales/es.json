@@ -1,9 +1,4 @@
-{
-  "landing": {
-    "name": "Emely García",
-    "role": "Desarrolladora Frontend",
-    "phrase": "Diseñando, desarrollando y manteniendo aplicaciones web escalables y de alto rendimiento."
-  },
+﻿{
   "experience": {
     "title": "Mi Experiencia",
     "description": "Hola, soy una Desarrolladora Front-End con casi 5 años de experiencia.\nMe encanta construir aplicaciones web rápidas y escalables que se vean y funcionen muy bien.\nMe siento cómoda trabajando con React, Angular y herramientas web modernas.\nHe trabajado con equipos Agile de diferentes partes del mundo, como India, Estados Unidos y Canadá.\nEl código limpio, las pruebas y el rendimiento son súper importantes para mí.",
@@ -252,6 +247,99 @@
       "description": "Un historial compacto de roles, responsabilidades y patrones de entrega extraídos de los datos disponibles del portafolio.",
       "entries": "entradas",
       "currentBadge": "Rol actual"
+    }
+  },
+  "home": {
+    "hero": {
+      "description": "Desarrolladora Front-End apasionada con más de 5 años de experiencia creando aplicaciones web escalables y de alto rendimiento. Especializada en React, Angular y TypeScript.",
+      "titleAccent": "Desarrolladora Frontend ",
+      "contactProtocol": "PROTOCOLO_DE_CONTACTO",
+      "viewProjects": "VER PROYECTOS",
+      "status": "ESTADO_DEL_SISTEMA: EN LÍNEA",
+      "pre-title": "",
+      "title": " senior impulsando soluciones web de alto impacto."
+    },
+    "stack": {
+      "title": "Stack Técnico",
+      "description": "Una base sólida construida sobre años de experiencia con tecnologías frontend modernas.",
+      "version": "VERSIÓN_ACTUAL: 2026.Q2-ESTABLE"
+    },
+    "expertise": {
+      "system_architecture": "Arquitectura de Sistemas",
+      "system_architecture_desc": "Diseño de ecosistemas frontend modulares y escalables, con código limpio, mantenible y fácil de probar, aplicando metodologías ágiles.",
+      "performance_core": "Rendimiento",
+      "performance_core_desc": "Optimización de aplicaciones web para entornos de alta demanda y entrega eficiente de contenido.",
+      "visual_fidelity": "Fidelidad Visual",
+      "visual_fidelity_desc": "Implementación precisa de interfaces a partir de diseños en Figma, con enfoque en accesibilidad y diseño responsivo."
+    },
+    "core": {
+      "title": "Infrastructura Principal",
+      "tools": [
+        "React",
+        "Angular",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "Flutter",
+        "Express"
+      ]
+    },
+    "style_and_design": {
+      "title": "Diseño y Estilos",
+      "tools": [
+        {
+          "name": "HTML & CSS",
+          "desc": "Diseños semánticos y de alto rendimiento"
+        },
+        {
+          "name": "Tailwind CSS",
+          "desc": "Sistemas de diseño atómico"
+        },
+        {
+          "name": "Responsive Design",
+          "desc": "Compatibilidad entre dispositivos"
+        },
+        {
+          "name": "Accessibility",
+          "desc": "Estándares web inclusivos"
+        }
+      ]
+    },
+    "tools_and_test": {
+      "title": "Herramientas & Pruebas",
+      "tools": [
+        "GIT",
+        "GITHUB",
+        "VITE",
+        "NPM",
+        "JEST",
+        "STORYBOOK",
+        "JIRA",
+        "FIREBASE"
+      ]
+    },
+    "cloud_data_section": {
+      "title": "Cloud & Datos",
+      "tools": [
+        "AWS",
+        "Google Cloud",
+        "Firebase",
+        "supabase",
+        "render",
+        "Digital Ocean",
+        "MySQL",
+        "MongoDB",
+        "postgreSQL"
+      ]
+    },
+    "ai_section": {
+      "title": "Inteligencia Artificial",
+      "tag": "COLABORACIÓN_IA_ACTIVA",
+      "tools": [
+        "Cursor",
+        "Codex",
+        "Copilot"
+      ]
     }
   }
 }

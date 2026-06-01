@@ -32,7 +32,7 @@ export const TopAppBar = () => {
                     </span>
                     <span
                         className="relative overflow-hidden font-mono text-xs font-bold tracking-[0.2em] text-primary">
-                        {t('landing.name')}
+                        {t('menu.name')}
                     </span>
                 </Link>
 
