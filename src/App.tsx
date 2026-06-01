@@ -32,23 +32,23 @@ export default function App() {
 
     return (
         <div
-            className="bg-[#0b1326] text-[#dae2fd] font-sans antialiased selection:bg-[#d0bcff]/30 selection:text-white min-h-screen relative overflow-x-hidden flex flex-col justify-between">
+            className="bg-[#0b1326] text-on-surface font-sans antialiased selection:bg-primary/30 selection:text-white min-h-screen relative overflow-x-hidden flex flex-col justify-between">
 
             {/* 1. Atmospheric Gradient Animated Mesh Background Layer */}
             <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
                 <div className="mesh-bg">
                     {/* Pulsating colorful layout blobs */}
-                    <div className="mesh-blob bg-[#3c0091] w-[80vw] h-[80vw] -top-[10%] -left-[10%] opacity-35"/>
+                    <div className="mesh-blob bg-on-primary w-[80vw] h-[80vw] top-[-10%] left-[-10%] opacity-35"/>
                     <div
-                        className="mesh-blob bg-[#004e5c] w-[60vw] h-[60vw] top-[30%] -right-[5%] [animation-delay:-6s] opacity-25"/>
+                        className="mesh-blob bg-[#004e5c] w-[60vw] h-[60vw] top-[30%] right-[-5%] [animation-delay:-6s] opacity-25"/>
                     <div
-                        className="mesh-blob bg-[#620040] w-[75vw] h-[75vw] -bottom-[10%] left-[15%] [animation-delay:-12s] opacity-25"/>
+                        className="mesh-blob bg-on-tertiary w-[75vw] h-[75vw] bottom-[-10%] left-[15%] [animation-delay:-12s] opacity-25"/>
                 </div>
             </div>
 
             {/* 2. Custom Interactive Cursor Glow Track */}
             <div
-                className="fixed top-0 left-0 w-[500px] h-[500px] bg-[#d0bcff]/15 rounded-full blur-[140px] pointer-events-none z-10 transition-opacity duration-500 mix-blend-screen"
+                className="fixed top-0 left-0 w-125 h-125 bg-primary/15 rounded-full blur-[140px] pointer-events-none z-10 transition-opacity duration-500 mix-blend-screen"
                 style={{
                     transform: `translate(${cursorPos.x}px, ${cursorPos.y}px)`,
                     opacity: showGlow ? 1 : 0
@@ -59,7 +59,7 @@ export default function App() {
             <TopAppBar/>
             {/* 4. Core Rendered Viewport Content (with smooth fade entrance) */}
             <main
-                className="flex-grow pt-32 pb-24 relative z-20 max-w-7xl w-full mx-auto px-6 md:px-16 animate-fade-in-up">
+                className="grow pt-24 pb-24 relative z-20 max-w-7xl w-full mx-auto px-6 md:px-16 animate-fade-in-up">
                 <ScrollRestoration />
                 <Outlet/>
             </main>

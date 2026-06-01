@@ -29,7 +29,8 @@ export const FooterView = () => {
               devemg © {currentYear} v4.0.0
             </span>
                     </div>
-                    <span className="font-sans text-xs text-on-surface-variant max-w-sm leading-relaxed">
+                    <span className="font-sans text-xs text-on-surface-variant max-w-sm leading-relaxed opacity-20">
+                        Inspired in BentoGrids collections
           </span>
                 </div>
 

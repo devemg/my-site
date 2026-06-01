@@ -14,7 +14,7 @@ const HeaderEnglish = () => (<div className="max-w-3xl mb-12">
     <h1 className="font-display text-4xl md:text-5xl text-white mb-4 font-extrabold leading-tight">
         Let's build <span className="text-gradient">something together.</span>
     </h1>
-    <p className="font-sans text-[#cbc3d7] text-base md:text-lg leading-relaxed">
+    <p className="font-sans text-on-surface-variant text-base md:text-lg leading-relaxed">
         Whether you're looking to integrate cutting-edge frontend patterns,
         or
         simply talk tech—I'm always open to high-fidelity collaborations.
@@ -26,7 +26,7 @@ const HeaderSpanish = () => (
         <h1 className="font-display text-4xl md:text-5xl text-white mb-4 font-extrabold leading-tight">
             Hagamos realidad <span className="text-gradient">grandes ideas.</span>
         </h1>
-        <p className="font-sans text-[#cbc3d7] text-base md:text-lg leading-relaxed">
+        <p className="font-sans text-on-surface-variant text-base md:text-lg leading-relaxed">
             Ya sea que necesites desarrollar experiencias frontend modernas o simplemente conversar sobre tecnología,
             siempre estoy abierta conversar y crear colaboraciones que generen impacto.
         </p>
@@ -96,14 +96,14 @@ const ContactPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
                 {/* Contact Form Card (7 Columns) */}
                 <div
-                    className="lg:col-span-12 xl:col-span-7 glass-card rounded-xl p-8 flex flex-col justify-between h-fit border-[#d0bcff]/10 hover:border-[#d0bcff]/20 transition-all duration-300">
+                    className="lg:col-span-12 xl:col-span-7 glass-card rounded-xl p-8 flex flex-col justify-between h-fit border-primary/10 hover:border-primary/20 transition-all duration-300">
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             {/* Name box */}
                             <div className="space-y-2">
                                 <label
                                     htmlFor="name"
-                                    className="font-mono text-[10px] text-[#cbc3d7]/60 block uppercase tracking-wide"
+                                    className="font-mono text-[10px] text-on-surface-variant/60 block uppercase tracking-wide"
                                 >
                                     {t('contact.form.name')}
                                 </label>
@@ -111,10 +111,10 @@ const ContactPage = () => {
                                     id="name"
                                     type="text"
                                     placeholder={t('contact.form.namePlaceholder')}
-                                    className={`w-full bg-[#131b2e] border rounded-lg px-4 py-3 focus:outline-none focus:ring-1 transition-all font-sans text-xs text-white placeholder:text-[#958ea0]/40 ${
+                                    className={`w-full bg-surface-container-low border rounded-lg px-4 py-3 focus:outline-none focus:ring-1 transition-all font-sans text-xs text-white placeholder:text-outline/40 ${
                                         errors.name
                                             ? 'border-rose-400/80 focus:border-rose-400 focus:ring-rose-400'
-                                            : 'border-[#494454]/40 focus:border-[#d0bcff] focus:ring-[#d0bcff]'
+                                            : 'border-outline-variant/40 focus:border-primary focus:ring-primary'
                                     }`}
                                     disabled={isDisabled}
                                     aria-invalid={Boolean(errors.name)}
@@ -127,7 +127,7 @@ const ContactPage = () => {
                             <div className="space-y-2">
                                 <label
                                     htmlFor="email"
-                                    className="font-mono text-[10px] text-[#cbc3d7]/60 block uppercase tracking-wide"
+                                    className="font-mono text-[10px] text-on-surface-variant/60 block uppercase tracking-wide"
                                 >
                                     {t('contact.form.email')}
                                 </label>
@@ -135,10 +135,10 @@ const ContactPage = () => {
                                     id="email"
                                     type="email"
                                     placeholder={t('contact.form.emailPlaceholder')}
-                                    className={`w-full bg-[#131b2e] border rounded-lg px-4 py-3 focus:outline-none focus:ring-1 transition-all font-sans text-xs text-white placeholder:text-[#958ea0]/40 ${
+                                    className={`w-full bg-surface-container-low border rounded-lg px-4 py-3 focus:outline-none focus:ring-1 transition-all font-sans text-xs text-white placeholder:text-outline/40 ${
                                         errors.email
                                             ? 'border-rose-400/80 focus:border-rose-400 focus:ring-rose-400'
-                                            : 'border-[#494454]/40 focus:border-[#d0bcff] focus:ring-[#d0bcff]'
+                                            : 'border-outline-variant/40 focus:border-primary focus:ring-primary'
                                     }`}
                                     disabled={isDisabled}
                                     aria-invalid={Boolean(errors.email)}
@@ -152,7 +152,7 @@ const ContactPage = () => {
                         <div className="space-y-2">
                             <label
                                 htmlFor="message"
-                                className="font-mono text-[10px] text-[#cbc3d7]/60 block uppercase tracking-wide"
+                                className="font-mono text-[10px] text-on-surface-variant/60 block uppercase tracking-wide"
                             >
                                 {t('contact.form.message')}
                             </label>
@@ -160,10 +160,10 @@ const ContactPage = () => {
                                 id="message"
                                 rows={6}
                                 placeholder={t('contact.form.messagePlaceholder')}
-                                className={`w-full bg-[#131b2e] border rounded-lg px-4 py-3 focus:outline-none focus:ring-1 transition-all font-sans text-xs text-white placeholder:text-[#958ea0]/40 resize-none ${
+                                className={`w-full bg-surface-container-low border rounded-lg px-4 py-3 focus:outline-none focus:ring-1 transition-all font-sans text-xs text-white placeholder:text-outline/40 resize-none ${
                                     errors.message
                                         ? 'border-rose-400/80 focus:border-rose-400 focus:ring-rose-400'
-                                        : 'border-[#494454]/40 focus:border-[#d0bcff] focus:ring-[#d0bcff]'
+                                        : 'border-outline-variant/40 focus:border-primary focus:ring-primary'
                                 }`}
                                 disabled={isDisabled}
                                 aria-invalid={Boolean(errors.message)}
@@ -178,7 +178,7 @@ const ContactPage = () => {
                                 type="submit"
                                 disabled={isDisabled}
                                 className={twMerge(
-                                    "w-full sm:w-auto px-8 py-4 cyber-gradient text-white font-mono text-xs font-bold rounded-lg hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-[#a078ff]/25 flex items-center justify-center gap-3 cursor-pointer",
+                                    "w-full sm:w-auto px-8 py-4 cyber-gradient text-white font-mono text-xs font-bold rounded-lg hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-primary-container/25 flex items-center justify-center gap-3 cursor-pointer",
                                     isDisabled && "opacity-50",
                                 )}
                             >
@@ -193,7 +193,7 @@ const ContactPage = () => {
                             <button
                                 type="button"
                                 disabled
-                                className="w-full sm:w-auto px-8 py-4 bg-[#2d3449] text-secondary font-mono text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-3"
+                                className="w-full sm:w-auto px-8 py-4 bg-surface-container-highest text-secondary font-mono text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-3"
                             >
                                 <svg className="animate-spin h-4 w-4 text-secondary" fill="none" viewBox="0 0 24 24">
                                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
@@ -209,7 +209,7 @@ const ContactPage = () => {
                             <button
                                 type="button"
                                 disabled
-                                className="w-full sm:w-auto px-8 py-4 bg-[#03b5d3] text-[#001f26] font-mono text-xs font-extrabold rounded-lg transition-all flex items-center justify-center gap-3 shadow-md shadow-[#03b5d3]/20"
+                                className="w-full sm:w-auto px-8 py-4 bg-secondary-container text-[#001f26] font-mono text-xs font-extrabold rounded-lg transition-all flex items-center justify-center gap-3 shadow-md shadow-secondary-container/20"
                             >
                                 <span className="material-symbols-outlined text-base"><CheckIcon size={16}/></span>
                                 {t('contact.form.sent')}
@@ -226,13 +226,13 @@ const ContactPage = () => {
                     <div
                         className="glass-card rounded-xl overflow-hidden relative group border-white/5 flex flex-col justify-between h-fit self-start">
                         <div
-                            className="absolute inset-0 bg-gradient-to-br from-[#d0bcff]/10 to-[#4cd7f6]/5 pointer-events-none"/>
+                            className="absolute inset-0 bg-linear-to-br from-primary/10 to-secondary/5 pointer-events-none"/>
 
                         <div className="relative p-8 h-full flex flex-col justify-center space-y-6">
                             <div className="space-y-2">
                                 <div className="flex items-center gap-3">
                                     <div
-                                        className="w-3 h-3 rounded-full bg-[#4cd7f6] shadow-[0_0_8px_#4cd7f6] animate-pulse"/>
+                                        className="w-3 h-3 rounded-full bg-secondary shadow-[0_0_8px_#4cd7f6] animate-pulse"/>
                                     <span
                                         className="font-mono text-[10px] text-secondary uppercase tracking-widest font-extrabold">
                     {t('contact.availability.status')}
@@ -241,14 +241,14 @@ const ContactPage = () => {
                                 <h4 className="font-sans text-xl font-bold text-white">
                                     {t('contact.availability.title')}
                                 </h4>
-                                <p className="font-sans text-xs text-[#cbc3d7]">
+                                <p className="font-sans text-xs text-on-surface-variant">
                                     {t('contact.availability.description')}
                                 </p>
                             </div>
 
                             {/* Card Footer credentials line */}
-                            <div className="pt-6 border-t border-[#494454]/30 flex items-center justify-between">
-                                <p className="font-mono text-[10px] text-[#cbc3d7]/60 uppercase tracking-tight font-bold">
+                            <div className="pt-6 border-t border-outline-variant/30 flex items-center justify-between">
+                                <p className="font-mono text-[10px] text-on-surface-variant/60 uppercase tracking-tight font-bold">
                                     {t('contact.availability.projects')}
                                 </p>
                             </div>

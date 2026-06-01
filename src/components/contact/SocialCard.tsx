@@ -48,8 +48,8 @@ const SocialCard = ({contacts = []}: SocialProps) => {
 
     return (
         <div
-            className="glass-card rounded-xl p-8 flex flex-col justify-center border-white/10 hover:border-[#4cd7f6]/30 transition-all duration-300 h-fit self-start">
-            <h3 className="font-mono text-xs text-[#cbc3d7]/60 uppercase tracking-widest mb-6">
+            className="glass-card rounded-xl p-8 flex flex-col justify-center border-white/10 hover:border-secondary/30 transition-all duration-300 h-fit self-start">
+            <h3 className="font-mono text-xs text-on-surface-variant/60 uppercase tracking-widest mb-6">
                 {t('contact.social.title')}
             </h3>
             <div className="space-y-4">
@@ -59,7 +59,7 @@ const SocialCard = ({contacts = []}: SocialProps) => {
                         href={soc.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={twMerge(`flex items-center justify-between p-4 bg-[#222a3d]/50 rounded-lg group/link transition-all border border-[#494454]/10`,
+                        className={twMerge(`flex items-center justify-between p-4 bg-surface-container-high/50 rounded-lg group/link transition-all border border-outline-variant/10`,
                             soc.color)}
                     >
                         <div className="flex items-center gap-4">
