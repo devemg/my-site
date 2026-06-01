@@ -1,5 +1,5 @@
 import {createContext} from 'react';
-import {ConsoleLogContextType} from "@components/home/ConsoleLog/context";
+import {ConsoleLogContextType} from "@contexts/console-log/types.ts";
 
 export const ConsoleLogContext = createContext<
     ConsoleLogContextType | undefined

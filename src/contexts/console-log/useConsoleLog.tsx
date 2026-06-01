@@ -1,5 +1,5 @@
 import {useContext} from "react";
-import {ConsoleLogContext} from "@components/home/ConsoleLog/context";
+import {ConsoleLogContext} from "./index.ts";
 
 export const useConsoleLog = () => {
     const context = useContext(ConsoleLogContext);

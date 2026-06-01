@@ -29,7 +29,8 @@
       "@models/*": ["./models/*"],
       "@components/*": ["./components/*"],
       "@pages/*": ["./pages/*"],
-      "@utils/*": ["./utils/*"]
+      "@utils/*": ["./utils/*"],
+      "@contexts/*": ["./contexts/*"]
     }
   },
   "include": ["src"]

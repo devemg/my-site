@@ -1,4 +1,4 @@
-import {useConsoleLog} from "@components/home/ConsoleLog/context";
+import {useConsoleLog} from "@contexts/console-log";
 
 const ConsoleLog = () => {
     const { terminalLogs } = useConsoleLog();
