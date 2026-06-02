@@ -1,0 +1,23 @@
+{
+  "linkedin": {
+    "name": "LinkedIn",
+    "username": "Emely García",
+    "link": "https://linkedin.com/in/emely-garciam",
+    "textCol": "text-secondary",
+    "color": "hover:bg-[#4cd7f6]/10"
+  },
+  "gmail": {
+    "name": "Email",
+    "username": "garciam.emm@gmail.com",
+    "link": "mailto:garciam.emm@gmail.com?Subject=Hi Emely!",
+    "textCol": "text-[#ffafd3]",
+    "color": "hover:bg-[#ffafd3]/10"
+  },
+  "github": {
+    "name": "Github",
+    "username": "devemg",
+    "link": "https://github.com/devemg",
+    "textCol": "text-primary",
+    "color": "hover:bg-[#d0bcff]/10"
+  }
+}

@@ -30,7 +30,8 @@
       "@components/*": ["./components/*"],
       "@pages/*": ["./pages/*"],
       "@utils/*": ["./utils/*"],
-      "@contexts/*": ["./contexts/*"]
+      "@contexts/*": ["./contexts/*"],
+      "@assets/*": ["./assets/*"],
     }
   },
   "include": ["src"]

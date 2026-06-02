@@ -1,17 +1,17 @@
 import {TerminalIcon} from "lucide-react";
-import {getDevemgContacts} from "@data/contact.data.ts";
 import {useMemo} from "react";
+import {useSocials} from "@hooks/useSocials.tsx";
 
 
 export const FooterView = () => {
     const currentYear = new Date().getFullYear();
-    const contacts = getDevemgContacts();
+    const {findSocial,} = useSocials();
 
-    const github = useMemo(() => contacts.find(c => c.id.toLowerCase() === "github"), [contacts]);
+    const github = useMemo(() => findSocial("github"), [findSocial]);
 
-    const linkedin = useMemo(() => contacts.find(c => c.id.toLowerCase() === "linkedin"), [contacts]);
+    const linkedin = useMemo(() => findSocial("linkedin"), [findSocial]);
 
-    const resume = useMemo(() => contacts.find(c => c.id.toLowerCase() === "resume"), [contacts]);
+    const resume = useMemo(() => findSocial("resume"), [findSocial]);
 
     return (
         <footer

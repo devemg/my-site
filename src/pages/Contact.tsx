@@ -8,7 +8,7 @@ import {
 import {twMerge} from "tailwind-merge";
 import {contactFormResolver, type ContactFormValues} from '../schemas/contact.shema';
 import {SocialCard} from "@components/contact/SocialCard.tsx";
-import {getDevemgContacts} from "@data/contact.data.ts";
+import {useSocials} from "@hooks/useSocials.tsx";
 
 const HeaderEnglish = () => (<div className="max-w-3xl mb-12">
     <h1 className="font-display text-4xl md:text-5xl text-white mb-4 font-extrabold leading-tight">
@@ -36,7 +36,7 @@ const HeaderSpanish = () => (
 
 const ContactPage = () => {
     const {t, i18n} = useTranslation();
-    const contacts = getDevemgContacts();
+    const {socials} = useSocials();
     const [submittingState, setSubmittingState] = useState<'idle' | 'dispatching' | 'sent'>('idle');
     const previousLanguageRef = useRef(i18n.resolvedLanguage);
     const {
@@ -221,7 +221,7 @@ const ContactPage = () => {
                 {/* Social Links & Details Cluster (5 Columns) */}
                 <div className="lg:col-span-12 xl:col-span-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-6">
                     {/* Social Links Card */}
-                    <SocialCard contacts={contacts}/>
+                    <SocialCard contacts={socials}/>
                     {/* Availability Info Card */}
                     <div
                         className="glass-card rounded-xl overflow-hidden relative group border-white/5 flex flex-col justify-between h-fit self-start">

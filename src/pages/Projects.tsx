@@ -7,8 +7,8 @@ import {ProjectCard} from '@components/projects/ProjectCard';
 import {FeaturedProjectCard} from '@components/projects/FeaturedProjectCard';
 import {StatsCard} from '@components/projects/StatsCard';
 import {ProjectItem} from "@models/project-item.ts";
-import {getDevemgContacts} from "@data/contact.data.ts";
 import {useMemo} from "react";
+import {useSocials} from "@hooks/useSocials.tsx";
 
 const projectTags: Record<string, string[]> = {
     'random-qa': ['Angular', 'Ionic', 'Mobile', 'Realtime'],
@@ -30,11 +30,11 @@ const getSummaryLine = (description: string) => description.split('\n').find(Boo
 const ProjectsPage = () => {
     const {t} = useTranslation();
     const projects = getDevemgProjects();
-    const contacts = getDevemgContacts();
+    const { findSocial } = useSocials();
     const featuredProject = projects.find((project) => project.id === 'ecom-app') ?? projects[0];
     const gridProjects = projects.filter((project) => project.id !== featuredProject.id);
 
-    const github = useMemo(() => contacts.find(c => c.id.toLowerCase() === 'github'), [contacts]);
+    const github = useMemo(() => findSocial('github'), [findSocial]);
 
     return (
         <section className="relative isolate space-y-12 text-slate-200">

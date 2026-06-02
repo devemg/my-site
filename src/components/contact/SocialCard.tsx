@@ -10,6 +10,7 @@ import {useTranslation} from "react-i18next";
 import {twMerge} from "tailwind-merge";
 
 interface SocialCardItem {
+    id: string;
     name: string;
     icon: ReactNode;
     color?: string;
@@ -39,7 +40,6 @@ const SocialCard = ({contacts = []}: SocialProps) => {
     const contactsMap: Array<SocialCardItem> = contacts.map((contact: ContactItem) => ({
         ...contact,
         icon: getSocialIcon(contact.id),
-        name: t(contact.id),
     }));
 
     if (contactsMap.length === 0) {
@@ -55,7 +55,7 @@ const SocialCard = ({contacts = []}: SocialProps) => {
             <div className="space-y-4">
                 {contactsMap.map((soc) => (
                     <a
-                        key={soc.name}
+                        key={soc.id}
                         href={soc.link}
                         target="_blank"
                         rel="noopener noreferrer"
