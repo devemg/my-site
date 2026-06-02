@@ -7,23 +7,6 @@ interface StatsCardProps {
     projects: ProjectItem[];
 }
 
-const projectTags: Record<string, string[]> = {
-    'random-qa': ['Angular', 'Ionic', 'Mobile', 'Realtime'],
-    'fast-messages': ['MEAN', 'Realtime', 'Angular', 'Mobile'],
-    'wheather-tv': ['React', 'TV', 'Tizen'],
-    'ecom-app': ['React', 'Commerce', 'Redux'],
-    'playely-web': ['Angular', 'OTT', 'Streaming'],
-    'playely-tv': ['React', 'TV', 'Streaming'],
-    'swiftmap-app': ['React', 'Maps', 'Leaflet'],
-    'brisland-ui-app': ['React', 'Motion', 'Animation'],
-    'invittalo-admin-app': ['Angular', 'Admin', 'Events'],
-    'invittalo-xv-app': ['Angular', 'Client', 'Events'],
-    'tic-tac-toe-tv': ['React', 'TV', 'Game'],
-};
-
-
-const getProjectTags = (project: ProjectItem) => projectTags[project.id] ?? ['System'];
-
 const StatsCard = ({ projects = [] }: StatsCardProps) => {
     const {t} = useTranslation();
 
@@ -41,7 +24,7 @@ const StatsCard = ({ projects = [] }: StatsCardProps) => {
         },
         {
             label: t('projects.stats.stacks.label'),
-            value: new Set(projects.flatMap((project) => getProjectTags(project))).size.toString().padStart(2, '0'),
+            value: new Set(projects.flatMap((project) => project.tags)).size.toString().padStart(2, '0'),
             hint: t('projects.stats.stacks.hint')
         },
     ], [projects, t]);

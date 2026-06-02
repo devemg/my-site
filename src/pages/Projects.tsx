@@ -1,40 +1,26 @@
 import {Link} from 'react-router';
 import {ArrowRightIcon, Code2Icon} from 'lucide-react';
 import {useTranslation} from 'react-i18next';
-import {getDevemgProjects} from '../data/projects.data';
 import {ActiveTab} from '@models/types';
 import {ProjectCard} from '@components/projects/ProjectCard';
 import {FeaturedProjectCard} from '@components/projects/FeaturedProjectCard';
 import {StatsCard} from '@components/projects/StatsCard';
-import {ProjectItem} from "@models/project-item.ts";
+import {ProjectDescription} from "@models/project-item.ts";
 import {useMemo} from "react";
 import {useSocials} from "@hooks/useSocials.tsx";
+import {useProjects} from "@hooks/useProjects.tsx";
 
-const projectTags: Record<string, string[]> = {
-    'random-qa': ['Angular', 'Ionic', 'Mobile', 'Realtime'],
-    'fast-messages': ['MEAN', 'Realtime', 'Angular', 'Mobile'],
-    'wheather-tv': ['React', 'TV', 'Tizen'],
-    'ecom-app': ['React', 'Commerce', 'Redux'],
-    'playely-web': ['Angular', 'OTT', 'Streaming'],
-    'playely-tv': ['React', 'TV', 'Streaming'],
-    'swiftmap-app': ['React', 'Maps', 'Leaflet'],
-    'brisland-ui-app': ['React', 'Motion', 'Animation'],
-    'invittalo-admin-app': ['Angular', 'Admin', 'Events'],
-    'invittalo-xv-app': ['Angular', 'Client', 'Events'],
-    'tic-tac-toe-tv': ['React', 'TV', 'Game'],
-};
-
-const getProjectTags = (project: ProjectItem) => projectTags[project.id] ?? ['System'];
-const getSummaryLine = (description: string) => description.split('\n').find(Boolean) ?? description;
+const getSummaryLine = (description: ProjectDescription, lang: string) => (lang === 'en' ? description.en : description.es).split('\n').find(Boolean) ?? '';
 
 const ProjectsPage = () => {
-    const {t} = useTranslation();
-    const projects = getDevemgProjects();
-    const { findSocial } = useSocials();
-    const featuredProject = projects.find((project) => project.id === 'ecom-app') ?? projects[0];
+    const {t, i18n} = useTranslation();
+    const {findProject, projects} = useProjects();
+    const {findSocial} = useSocials();
+    const featuredProject = findProject('ecom-app') ?? projects[0];
     const gridProjects = projects.filter((project) => project.id !== featuredProject.id);
 
     const github = useMemo(() => findSocial('github'), [findSocial]);
+
 
     return (
         <section className="relative isolate space-y-12 text-slate-200">
@@ -76,8 +62,7 @@ const ProjectsPage = () => {
             <section className="grid gap-6 xl:grid-cols-12">
                 <FeaturedProjectCard
                     project={featuredProject}
-                    tags={getProjectTags(featuredProject)}
-                    summary={getSummaryLine(featuredProject.description)}
+                    summary={getSummaryLine(featuredProject.description, i18n.language)}
                 />
 
                 <StatsCard projects={projects}/>
@@ -100,8 +85,7 @@ const ProjectsPage = () => {
                         <ProjectCard
                             key={project.id}
                             project={project}
-                            tags={getProjectTags(project)}
-                            summary={getSummaryLine(project.description)}
+                            summary={getSummaryLine(project.description, i18n.language)}
                         />
                     ))}
                 </div>

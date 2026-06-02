@@ -6,11 +6,10 @@ import {ActiveTab} from '@models/types';
 
 interface ProjectCardProps {
     project: ProjectItem;
-    tags: string[];
     summary: string;
 }
 
-const ProjectCard = ({project, tags, summary}: ProjectCardProps) => {
+const ProjectCard = ({project, summary}: ProjectCardProps) => {
     const {t} = useTranslation();
 
     return (
@@ -39,7 +38,7 @@ const ProjectCard = ({project, tags, summary}: ProjectCardProps) => {
 
                 <div className="relative space-y-3">
                     <div className="flex flex-wrap gap-2">
-                        {tags.slice(0, 3).map((tag) => (
+                        {project?.tags?.slice(0, 3).map((tag) => (
                             <span
                                 key={tag}
                                 className="rounded-full border border-white/15 bg-white/10 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-white"

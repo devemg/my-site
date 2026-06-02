@@ -4,15 +4,9 @@ import {ArrowRightIcon, PlayIcon, SquareTerminalIcon} from 'lucide-react';
 import {useTranslation} from 'react-i18next';
 import {ActiveTab} from '@models/types';
 import {ProjectItem} from '@models/project-item';
-import {getDevemgProjects} from '../data/projects.data';
 import {StatsDetails} from "@components/project-details/StatsDetails.tsx";
 import {Gallery} from "@components/project-details/Gallery.tsx";
-
-const splitDescription = (description: string) =>
-    description
-        .split('\n')
-        .map((part) => part.trim())
-        .filter(Boolean);
+import {useProjects} from "@hooks/useProjects.tsx";
 
 const inferProjectTags = (project: ProjectItem) => {
     const haystack = `${project.id} ${project.name} ${project.description}`.toLowerCase();
@@ -37,28 +31,31 @@ const inferProjectTags = (project: ProjectItem) => {
     return tags.length > 0 ? tags : ['System'];
 };
 
-const getDetailText = (project: ProjectItem) => {
-    const paragraphs = splitDescription(project.description);
+const splitDescription = (description: string) =>
+    description
+        .split('\n')
+        .map((part) => part.trim())
+        .filter(Boolean);
 
-    return {
-        lead: paragraphs[0] ?? project.description,
-        body: paragraphs.slice(1),
-    };
-};
 
 const ProjectDetailsPage = () => {
     const {t, i18n} = useTranslation();
     const {key} = useParams();
-    const projects = useMemo(() => getDevemgProjects(), [i18n.resolvedLanguage]);
-    const resolvedProject = useMemo(
-        () => projects.find((item) => item.id === key),
-        [key, projects],
-    );
-    const project = resolvedProject ?? projects[0];
-    const detailText = getDetailText(project);
-    const projectTags = inferProjectTags(project);
+    const {findProject} = useProjects();
 
-    if (!key || !resolvedProject) {
+    const getDetailText = (project: ProjectItem) => {
+        const paragraphs = splitDescription(i18n.language === 'en' ? project.description.en : project.description.es);
+
+        return {
+            lead: paragraphs[0] ?? project.description,
+            body: paragraphs.slice(1),
+        };
+    };
+
+
+    const project = useMemo(() => key ? findProject(key) : undefined, [key, findProject]);
+
+    if (!key || !project) {
         return (
             <section className="space-y-8">
                 <div className="rounded-xl border border-slate-700 bg-slate-950/80 p-8 backdrop-blur-xl">
@@ -82,6 +79,9 @@ const ProjectDetailsPage = () => {
             </section>
         );
     }
+
+    const detailText = getDetailText(project);
+    const projectTags = inferProjectTags(project);
 
     return (
         <section className="relative isolate space-y-10 text-slate-200">

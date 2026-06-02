@@ -6,11 +6,10 @@ import {ProjectItem} from '@models/project-item';
 
 interface FeaturedProjectCardProps {
     project: ProjectItem;
-    tags: string[];
     summary: string;
 }
 
-const FeaturedProjectCard = ({project, tags, summary}: FeaturedProjectCardProps) => {
+const FeaturedProjectCard = ({project, summary}: FeaturedProjectCardProps) => {
     const {t} = useTranslation();
 
     return (
@@ -56,7 +55,7 @@ const FeaturedProjectCard = ({project, tags, summary}: FeaturedProjectCardProps)
 
                         <div className="space-y-4">
                             <div className="flex flex-wrap gap-2">
-                                {tags.map((tag) => (
+                                {project.tags?.map((tag) => (
                                     <span
                                         key={tag}
                                         className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-200"
@@ -83,7 +82,7 @@ const FeaturedProjectCard = ({project, tags, summary}: FeaturedProjectCardProps)
                                     {t('projects.cards.stack')}
                                 </p>
                                 <p className="mt-2 text-sm text-slate-200">
-                                    {tags.join(' / ')}
+                                    {project.tags?.join(' / ')}
                                 </p>
                             </div>
                         </div>
